@@ -1,0 +1,8 @@
+{
+    "HAEMATOLOGY":[
+        "whole body",["HAEMOGLOBIN (HB)" ,"gm/dl" , "11 – 16"],
+        ["TOTAL LEUCOCYTE COUNT" ,   "/cumm"        ,     "4000 - 11000"],
+        ["NEUTROPHIL"," %", "45-75"    ],
+        ["LYMPHOCYTE", "%", "20-40"    ]
+    ]
+}
