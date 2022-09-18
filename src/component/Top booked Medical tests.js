@@ -151,7 +151,7 @@ Also known as  Creatinine Conventional Blood
 
 </HStack>
 <Box p= '14px'  borderLeft={'4px'} borderLeftColor='green' borderBottom={'4px'}  borderBottomColor='grey' borderRadius={'15px'} >
-<Text textColor={'green'} fontSize='25px' fontStyle={'italic'} textColor={'green'} fontSize='25px' fontStyle={'italic'}>
+<Text textColor={'green'} fontSize='25px' fontStyle={'italic'} >
     Ldi Cholesterol Test
 
 </Text>

@@ -31,7 +31,7 @@ const sai=()=>{
     return (
         <>
 <Center>
-    <Box  textColor={'black'} p='30px' w='max-content' border={'1px'} mt='50px' borderRadius={'15px'} backgroundImage='/bg.jpg' backgroundBlendMode={'hue'}   >
+    <Box  textColor={'black'} p='30px' w='max-content' border={'1px'} mt='50px' borderRadius={'15px'}  backgroundColor='blue.600'>
         <Box>
             <Text fontSize={'25px'}> Name (नाम )</Text>
             <Input  name='pname'h='35px'type={'text'} onChange={handle} autoFocus></Input>

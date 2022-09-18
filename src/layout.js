@@ -1,15 +1,16 @@
-import {Box,Flex,Text,Image, Heading, Divider} from '@chakra-ui/react'
+import {Box,Flex,Text,Image, Heading, Divider,Center, HStack} from '@chakra-ui/react'
 import { Outlet ,Link} from 'react-router-dom'
-
+import  fotter from '../src/component/footer'
  export default function Navbar(){
 
     return (
         <>
 
 <Box>
-<Flex  alignItems={'center'} justifyContent='space-around' flexWrap={'wrap'}>
+<Flex  backgroundColor={'blue.600'} alignItems={'center'} justifyContent='space-around' flexWrap={'wrap'} >
     <Box>
-        <Image src='/logo.jpg' h='75px'></Image>
+                   <Image h='45px'src='https://media1.giphy.com/media/LnW9Odhzh7ssfakcsz/giphy.gif?cid=ecf05e47j6b4nogyu7onxwkcfj21rf6ojxciwbu82kk74s6b&rid=giphy.gif&ct=s'></Image>
+
        
     </Box>
     <Box>
@@ -27,8 +28,9 @@ Book A test
     </Box>
     <Box>
 <Text fontSize={'20px'} fontWeight='600'>
+    <Link to='/dr'>
     Download Report
- 
+    </Link>
 </Text>
     </Box>
     <Box>
@@ -49,11 +51,35 @@ Book A test
     </Flex>  
     <Divider>
         </Divider>  
-        </Box><Box backgroundImage={'/bg.jpg'} >
+        </Box><Box backgroundImage={'/bg.jpg'} backgroundAttachment='fixed' minHeight={'400px'}>
 
         
     <Outlet></Outlet>
+    <Box 
+    bottom={'50%'}  fontWeight='500' mt='100px' backgroundColor={'blue.600'}>
+       
+            <Box lineHeight={'30px'} fontStyle='italic'>
+            <Text  fontSize='30px' textColor={'white'}>
+            Aashirwad
+                </Text>
+                <HStack>                <Image h='45px'src='https://media1.giphy.com/media/LnW9Odhzh7ssfakcsz/giphy.gif?cid=ecf05e47j6b4nogyu7onxwkcfj21rf6ojxciwbu82kk74s6b&rid=giphy.gif&ct=s'></Image>
+                <Text  fontSize='30px'textColor={'white'}>Laboratory
+            
+                </Text>
+                </HStack>
+<Box>
+LABORATORY FOR HEALTH HUMEN SERVICE :- All Investigations have their limitation which are imposed by the limits of sensitivity and specifity of  Individual assay procedures as well as the specimen received by the laboratory .Isolated laboratory investigations never confirm the final diagnosis of the disease. They only help in arriving at a diagnosis in conjuction with clinical presentation and other related investigations. ( PARTIAL REPRODUCTION OF THE REPORT IS NOT PERMITTED FOR MEDICO LEGAL PURPOSE
+</Box>
+
+
+        <Text textColor={'white'} textAlign='center' fontSize={'20px'}>2022 ©            Aashirwad
+Labs All rights reserved.</Text>
+            </Box>
+
+        </Box>
     </Box>
+
+   
         </>
     )
  }
