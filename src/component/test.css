@@ -1,0 +1,24 @@
+#in{
+    display: none;
+}
+#print{
+  position: fixed;
+  top:0;
+  left: .4;
+}
+@media print{
+    #navbar{
+      display: none;
+    }
+    #footer{
+        color:red;
+      font-size: '10px';
+   
+    }
+    #outprint,#next,#pre{
+      display: none;
+    }
+    #in{
+        display: block;
+    }
+  }

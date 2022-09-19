@@ -35,7 +35,7 @@ const sendata=()=>{
  console.log(sai)
  setdisp('block')
  setcap(.5)
- fetch('http://localhost:4000/report', {
+ fetch('https://labcare.vercel.app/report', {
     method: "POST",
     body: JSON.stringify(sai),
     headers: {

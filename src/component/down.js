@@ -2,6 +2,7 @@ import { Heading, Button, HStack, Text, Input, Box, Center,Image } from "@chakra
 import axios from "axios"
 import { useState } from "react"
 import List from "./showlistofreports"
+import ReactToPrint from 'react-to-print';
 
 
 
@@ -13,7 +14,7 @@ export default function(){
 
  const getreport=()=>{
   if(al=='none'){
-    axios.get(`http://localhost:4000/report/m/${phone}`)
+    axios.get(`https://labcare.vercel.app/report/m/${phone}`)
     .then(x=>sr(x.data.reports)).catch((e)=>console.log(e))
   }
  }
