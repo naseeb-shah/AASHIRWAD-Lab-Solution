@@ -50,7 +50,7 @@ export default function Log() {
 
     console.log(us)
     
-    fetch('http://localhost:4000/admin/log', {
+    fetch('https://labcare.vercel.app/admin/log', {
       method: "POST",
       body: JSON.stringify(us),
       headers: {

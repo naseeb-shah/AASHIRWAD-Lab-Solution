@@ -18,8 +18,8 @@ export default function Report(){
      var {id }= useParams()
 
      useEffect(()=>{
-        const url='http://localhost:4000/'
-        // const url='https://labcare.vercel.app/'
+        // const url='http://localhost:4000/'
+         const url='https://labcare.vercel.app/'
         axios.get(`${url}report/id/${id}`)
         .then(x=>{
             console.log(x)

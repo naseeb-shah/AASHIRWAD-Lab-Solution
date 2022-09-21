@@ -41,7 +41,7 @@ alert("Please fill all Details")
 return
 }
  }
- const url='http://localhost:4000'
+ const url='https://labcare.vercel.app'
 //  const url='http://localhost:4000/'
  fetch(`${url}/feed`, {
     method: "POST",
@@ -129,8 +129,8 @@ w='400px'
       <Box>
         <AlertTitle>Success!</AlertTitle>
         <AlertDescription>
-          Your application has been received. We will review your application
-          and respond within the next 48 hours.
+          Your Request has been received
+          and respond within the next 4 hours.
         </AlertDescription>
       </Box>
       <CloseButton

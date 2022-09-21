@@ -76,7 +76,7 @@ if(sai.time==''){
  console.log(sai)
  setdisp('block')
  setcap(.5)
- const url='http://localhost:4000'
+ const url='https://labcare.vercel.app'
 //  const url='http://localhost:4000/'
  fetch(`${url}/report`, {
     method: "POST",
