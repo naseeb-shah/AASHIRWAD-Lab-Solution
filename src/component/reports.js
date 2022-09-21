@@ -18,8 +18,11 @@ export default function Report(){
      var {id }= useParams()
 
      useEffect(()=>{
-        axios.get(`https://labcare.vercel.app/report/id/${id}`)
+        const url='http://localhost:4000/'
+        // const url='https://labcare.vercel.app/'
+        axios.get(`${url}report/id/${id}`)
         .then(x=>{
+            console.log(x)
             setreport(x.data.reports[0])
             sd("block")
 console.log(report)
@@ -28,7 +31,7 @@ console.log(report)
 
      },[])
    
-     if(d=='block'){
+     if(d==='block'){
     totel=Object.keys(report.test)
      }
      
@@ -45,7 +48,7 @@ console.log(report)
      
      const page=useMemo(()=>d=='block'?<Deen g={totel} test={report.test} />:"",[d])
  return (<>
-  <Button id="outprint" onClick={generatePDF} >Download Report</Button>
+  <Button id="outprint" colorScheme={'facebook'} onClick={generatePDF} >Download Report</Button>
 <Box display={d}
 id="report"
 border='2px' p='25px' maxWidth={'800px'}m='auto'
@@ -67,20 +70,20 @@ border='2px' p='25px' maxWidth={'800px'}m='auto'
    <HStack>{
     }
    
-    <Text>Patient Name {report.name}</Text>
+    <Text>Patient Name : {report.name}</Text>
     <Spacer></Spacer>
-    <Text> Date 08-Sep-2022 </Text>
+    <Text> Date :  {report.date} </Text>
 
     </HStack>
     <HStack>
-    <Text>Age/Gender {report.age} Years/Female  
+    <Text>Age/Gender :{report.age} Years / {report.gender}
 </Text>
     <Spacer></Spacer>
-    <Text> Report Time :- 1:20 Pm</Text>
+    <Text> Report Time :{report.time}</Text>
 
     </HStack>
     <HStack>
-    <Text>Ref. By. Dr. Bhudhu Shah
+    <Text>Ref. By. : {report.reference}
 </Text>
     </HStack>
 </Box>

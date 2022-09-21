@@ -14,7 +14,7 @@ export default function(){
 
  const getreport=()=>{
   if(al=='none'){
-    axios.get(`https://labcare.vercel.app/report/m/${phone}`)
+    axios.get(`http://localhost:4000/report/m/${phone}`)
     .then(x=>sr(x.data.reports)).catch((e)=>console.log(e))
   }
  }
@@ -22,7 +22,7 @@ export default function(){
     
     <HStack flexWrap={'wrap'} pt='50px'ml='80px'>
         {/* <Image h='150px'src='https://media1.giphy.com/media/St3NH8X8DMq52JyMOF/giphy.gif?cid=ecf05e47wopg20i7hy9afhl30z5jbjro8w1eeewl9lqlvtw0&rid=giphy.gif&ct=s'></Image> */}
-<Box backgroundColor={'blue.600'}p='15px' borderRadius='10px'>
+<Box backgroundColor={'blue.600'}p='15px' borderRadius='10px' color={'white'}>
     <Text fontSize={'25px'}  fontStyle='italic'>
         Download Report
     </Text>
@@ -46,7 +46,7 @@ export default function(){
 <Image h='100px' src='https://media1.giphy.com/media/CxXiBGOPU9qHCHW2kN/giphy.gif?cid=ecf05e475i0fazosg4rsi1e623hd1yra4xptq42mn889b7yk&rid=giphy.gif&ct=s'></Image>
  </HStack>
  <Box w='max-content'>
-{reports.length>0?< List  key={1}data={reports}></List>:""}
+{reports.length>0?< List  key={1}data={reports}></List>:"No Report Found !"}
 </Box>
     </>)
 }

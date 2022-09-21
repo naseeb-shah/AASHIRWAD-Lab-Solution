@@ -14,13 +14,18 @@ deensahh('/book')
 
 
     return <>
-    <Image src='/sai.jpg' m='auto' borderRadius={'15px'}>
+  
+    <Box pt='80px'>
+    <Heading  textShadow={'revert'} fontStyle={'italic'} textAlign='center' mb='50px' color={'yellowgreen'}>
+        Welcome to Aashirwad Labs
+    </Heading>
+    <Image   src='/sai.jpg' m='auto'  boxShadow={'outline'}>
 
 </Image>
-
+</Box>
     <Box ml='10%' mt='30px' >
         
-<Heading fontSize={'30px'} textColor='green.400'>Top Booked Medical Tests
+<Heading fontSize={'30px'} textColor='yellowgreen' fontStyle={'italic'}>Top Booked Medical Tests
 </Heading>
 <Flex flexWrap={'wrap'} mt='30px'>
 <Box  border={'2px'} w='330px' p='10px' borderRadius={'15px'} borderColor='teal'>

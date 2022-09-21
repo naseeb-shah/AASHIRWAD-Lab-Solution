@@ -1,10 +1,29 @@
-import {Box,Flex,Text,Image, Heading, Divider,Center, HStack} from '@chakra-ui/react'
+import {Box,Flex,Text,Image, Heading, Divider,Center, HStack,Button} from '@chakra-ui/react'
 import { Outlet ,Link} from 'react-router-dom'
-import  fotter from '../src/component/footer'
+import{ChevronDownIcon} from '@chakra-ui/icons'
+import {
+    Menu,
+    MenuButton,
+    MenuList,
+    MenuItem,
+    MenuItemOption,
+    MenuGroup,
+    MenuOptionGroup,
+    MenuDivider,
+  } from '@chakra-ui/react'
+import { useSelector,useDispatch } from 'react-redux';
 import './App.css';
+import { loguser } from './features/authlevel';
+import { useState } from 'react';
+
+
 
  export default function Navbar(){
-
+    var dispatch=useDispatch()
+var authtype=useSelector((e)=>e.auth.value)
+var dis='block'
+if(authtype.addreport=='block')
+ dis='none'
 
     return (
         <>
@@ -12,7 +31,7 @@ import './App.css';
 <Box>
 <Flex 
 id='navbar'
-
+color={'white'}
 backgroundColor={'blue.600'} alignItems={'center'} justifyContent='space-around' flexWrap={'wrap'} >
     <Box>
                    <Image h='45px'src='https://media1.giphy.com/media/LnW9Odhzh7ssfakcsz/giphy.gif?cid=ecf05e47j6b4nogyu7onxwkcfj21rf6ojxciwbu82kk74s6b&rid=giphy.gif&ct=s'></Image>
@@ -25,6 +44,27 @@ backgroundColor={'blue.600'} alignItems={'center'} justifyContent='space-around'
 
 </Text>
     </Box>
+{/* ------------------------------------------ */}
+<Menu>
+  <MenuButton  as={Button} rightIcon={<ChevronDownIcon />} backgroundColor='inherit'  fontSize={'20px'}>
+    Patient
+  </MenuButton>
+  <MenuList color={'black'} bg='facebook.500'>
+    <MenuItem  as={Link}to='/dr'>Patient Report</MenuItem>
+    <MenuItem>Request to collect Sample</MenuItem>
+
+  
+    <MenuItem>Feedback</MenuItem>
+  </MenuList>
+</Menu>
+
+
+
+
+
+
+{/* ---------------------------------------- */}
+
     <Box>
 <Text fontSize={'20px'} fontWeight='600'>
     <Link to='/book'>
@@ -39,25 +79,57 @@ Book A test
     </Link>
 </Text>
     </Box>
+
+    
+    <Box>
+<Text fontSize={'20px'} fontWeight='600'display={authtype.addreport} >
+    <Link to='/report'>
+Add Report
+    </Link>
+</Text>
+    </Box>
+    
+    <Box>
+<Text fontSize={'20px'} fontWeight='600'display={authtype.labstatas} >
+    <Link to='/sta'>
+Lab Statas
+    </Link>
+</Text>
+    </Box>
+    <Box>
+<Text fontSize={'20px'} fontWeight='600' display={authtype.reports}>
+    <Link to='/all'>
+Reports
+    </Link>
+</Text>
+    </Box>
+    
     <Box>
 <Text fontSize={'20px'} fontWeight='600'>
     Contact Us
 </Text>
     </Box>
     <Box>
-<Text fontSize={'20px'} fontWeight='600'>
-    <Link to='/report'>
+<Text fontSize={'20px'} fontWeight='600' display={dis}>
+    <Link to='/log' >
     Admin
     </Link>
+  
 </Text>
+
+    
+   <Image src='/logout.svg' display={dis=='block'?"none":'block'} h='20px' onClick={()=>dispatch(loguser())}></Image>
+   
+    
     </Box>
+   
     
     
     
     </Flex>  
     <Divider>
         </Divider>  
-        </Box><Box backgroundImage={'/bg.jpg'} backgroundAttachment='fixed' minHeight={'400px'}>
+        </Box><Box  backgroundColor={'facebook.50'} backgroundAttachment='fixed' minHeight={'400px'}>
 
         
     <Outlet></Outlet>

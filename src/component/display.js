@@ -117,6 +117,7 @@ var test = {
 export default function Repo({ x,y}) {
      var dis=useDispatch()
      var report=useSelector((e)=>e.data.value)
+     console.log(report)
 
     // console.log(update)
     const [est, settest] = useState({})

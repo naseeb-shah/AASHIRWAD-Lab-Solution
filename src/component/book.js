@@ -17,43 +17,91 @@ export default function Book(){
       } = useDisclosure({ defaultIsOpen: false })
     
 
- const [re,se]=useState({})
+ const [re,se]=useState({
+    "name":'',
+    "fname":'',
+    'landmark':'',
+    'number':'',
+    "vill":'',
+
+ })
 
 const handle=(e)=>{
 
     se({...re,[e.target.name]:e.target.value})
-console.log(re)
+
 }
 
 const sai=()=>{
- onOpen()
+    console.log(re)
+ for(let i in  re){
+    console.log(re[i])
+if(re[i]==''){
+alert("Please fill all Details")
+return
+}
+ }
+ const url='http://localhost:4000'
+//  const url='http://localhost:4000/'
+ fetch(`${url}/feed`, {
+    method: "POST",
+    body: JSON.stringify({
+        "type":"Sample",
+        "name":re.name,
+        "mobile":re.number,
+        "address":`${re.fname} ,${re.landmark},${re.vill}`
+    }),
+    headers: {
+        'Content-Type': "application/json"
+    }
+})
+    .then((x) => x.json())
+    .then((x) => {
+      
+      onOpen()
+    
+      for(let i in  re){
+        
+    re[i]=''
+    
+    }
+      console.log(x)
+   }).catch(e=>console.log(e))
+
+
+
+
+
+
 }
     return (
         <>
 <Center>
-    <Box  textColor={'black'} p='30px' w='max-content' border={'1px'} mt='50px' borderRadius={'15px'}  backgroundColor='blue.600'>
+    <Box  textColor={'white'} p='30px' w='max-content' border={'1px'} mt='50px' borderRadius={'15px'}  backgroundColor='blue.600'>
         <Box>
             <Text fontSize={'25px'}> Name (नाम )</Text>
-            <Input  name='pname'h='35px'type={'text'} onChange={handle} autoFocus></Input>
+            <Input value={re.name} name='name'h='35px'type={'text'} onChange={handle} autoFocus></Input>
         </Box>
         <Box>
             <Text fontSize={'25px'}>Father Name( पिता का नाम )</Text>
-            <Input  name='fname'h='35px'type={'text'} onChange={handle}></Input>
+            <Input value={re.fname} name='fname'h='35px'type={'text'} onChange={handle}></Input>
         </Box>
         <Box>
             <Text fontSize={'25px'}> Mobile No.(मोबाइल न.)</Text>
-            <Input  name='Number'h='35px'type={'text'} onChange={handle}></Input>
+            <Input value={re.number} name='number'h='35px'type={'text'} onChange={handle}></Input>
         </Box>
         <Box>
             <Text fontSize={'25px'}>Landmark(नजदीक स्थल )</Text>
-            <Input  name='Number'h='35px'type={'text'} onChange={handle}></Input>
+            <Input value={re.landmark} name='landmark'h='35px'type={'text'} onChange={handle}></Input>
         </Box>
     
 
 <Box>
             <Text fontSize={'25px'}> Select Village(गांव )</Text>
 
-<Select name='vill' placeholder='Select option' onChange={handle}>
+<Select value={
+    re.vill
+} name='vill' placeholder='Select option' onChange={handle}  color='black'>
   <option  value='Taharpur Kalan'>Taharpur Kalan</option>
   <option value='Gohra Bani (236)'>Gohra Bani (236)</option>
   <option value='Jogiwara (228)'>Jogiwara (228)</option>
@@ -73,7 +121,7 @@ const sai=()=>{
 </Button>
 
 </Center>
-{isVisible?<Alert status='success' position={'fixed'}
+{isVisible?<Alert bg='blue' color={'white'} status='success' position={'fixed'}
 mt='-20%'
 w='400px'
 >

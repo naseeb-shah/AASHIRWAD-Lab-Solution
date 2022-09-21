@@ -1,13 +1,25 @@
-import { CircularProgress, CircularProgressLabel } from '@chakra-ui/react'
+import { Center, CircularProgress, CircularProgressLabel, Select } from '@chakra-ui/react'
 import { Heading,Box, FormLabel, Input,HStack ,Flex, Button,Text, VStack} from "@chakra-ui/react";
 import { useState } from "react";
 // import store from "../app/store";
 import { useDispatch,useSelector } from "react-redux"
+import {cleardata} from '../features/handle'
 
 import Repo from "./display";
  export default function Inputdata(){
+   var dis=useDispatch()
 var store=useSelector((e)=>e.data.value)
-const [per,sr]=useState({})
+const [per,sr]=useState({
+   'name':'',
+   'age':'',
+   "mobile":'',
+   "address":'',
+   "time":'',
+   'date':'',
+   "gender":'',
+   'reference':''
+   
+})
 const [cap,setcap]=useState(1)
 const [disp,setdisp]=useState('none')
 
@@ -30,12 +42,43 @@ const Test=(e) =>{
   console.log(per)
 
 }
-const sendata=()=>{
+const sendata=async()=>{
  var sai={ 'tests':store,...per}
+
+
+if(sai.mobile.length!=10){
+   alert(`Please Enter Mobile No!
+   Mobile should be 10 digits`)
+   return
+}
+
+if(sai.age==''){
+   alert('Please Enter Age of Patient')
+   return
+}
+if(sai.reference==''){
+   alert('Please Enter Refrence')
+   return
+}
+if(sai.address==''){
+   alert('Please Enter Patient Address')
+   return
+}
+if(sai.name==''){
+   alert('Please Enter Patient Name')
+   return
+}
+if(sai.time==''){
+   alert('Please Enter date')
+   return
+}
+
  console.log(sai)
  setdisp('block')
  setcap(.5)
- fetch('https://labcare.vercel.app/report', {
+ const url='http://localhost:4000'
+//  const url='http://localhost:4000/'
+ fetch(`${url}/report`, {
     method: "POST",
     body: JSON.stringify(sai),
     headers: {
@@ -45,10 +88,15 @@ const sendata=()=>{
     .then((x) => x.json())
     .then((x) => {
       
-      
+      dis(cleardata())
+      for(let i in per){
+         per[i]=''
+      }
       setdisp('none')
       setcap(1)
-      console.log(x)})
+      alert(x.response)
+      console.log(x)
+   })
 
 
 
@@ -69,21 +117,24 @@ Fill Patient Data
 <FormLabel w='105px'>
    Patient Name
 </FormLabel>
-<Input  name='name' backgroundColor={'green.100'} h='30px' onChange={Test} w='300px'>
+<Input  name='name' value={per.name} backgroundColor={'green.100'} h='30px' onChange={Test} w='300px'>
 </Input>
 </HStack>
 <HStack >
 <FormLabel w='100px'>
    Gender
 </FormLabel>
-<Input  name='Gender'backgroundColor={'green.100'} h='30px' onChange={Test} w='300px'>
-</Input>
+<Select value={per.gender} name='gender'backgroundColor={'green.100'} h='30px' onChange={Test} w='300px'>
+<option >Gender</option>
+<option value={'Male'}>Male</option>
+<option value={'Female'}>Female</option>
+</Select>
 </HStack>
 <HStack >
 <FormLabel w='100px'>
    Age
 </FormLabel>
-<Input type={'Number'}  name='age'backgroundColor={'green.100'} h='30px' onChange={Test} w='300px'>
+<Input type={'Number'} value={per.age} name='age'backgroundColor={'green.100'} h='30px' onChange={Test} w='300px'>
 </Input>
 </HStack>
 
@@ -92,29 +143,38 @@ Fill Patient Data
 <FormLabel w='100px'>
 Date
 </FormLabel>
-<Input type='date' name='time' backgroundColor={'green.100'} h='30px' onChange={Test} w='300px'>
+<Input type='date' name='date'value={per.date} backgroundColor={'green.100'} h='30px' onChange={Test} w='300px'>
 </Input>
 </HStack>
 <HStack >
    
+<HStack >
+<FormLabel w='100px'>
+Time
+</FormLabel>
+<Input type='time' name='time'value={per.time} backgroundColor={'green.100'} h='30px' onChange={Test} w='300px'>
+</Input>
+</HStack>
+<HStack ></HStack>
+   
 <FormLabel w='100px'>
    Address
 </FormLabel>
-<Input  name='address'backgroundColor={'green.100'} h='30px' onChange={Test} w='300px'>
+<Input value={per.address}  name='address'backgroundColor={'green.100'} h='30px' onChange={Test} w='300px'>
 </Input>
 </HStack>
 <HStack >
 <FormLabel w='100px'>
    Ref. By
 </FormLabel>
-<Input  name='reference'backgroundColor={'green.100'} h='30px' onChange={Test} w='300px'>
+<Input value={per.reference} name='reference'backgroundColor={'green.100'} h='30px' onChange={Test} w='300px'>
    </Input>
 </HStack>
 <HStack >
 <FormLabel w='100px'>
 Mobile No.
 </FormLabel>
-<Input type='Number' name='mobile'backgroundColor={'green.100'} h='30px' onChange={Test} w='300px'>
+<Input type='Number'  value={per.mobile}name='mobile'backgroundColor={'green.100'} h='30px' onChange={Test} w='300px'>
 </Input>
 </HStack>
 </HStack>
@@ -122,48 +182,48 @@ Mobile No.
  <Flex ml='100px' opacity={cap}
  flexWrap={'wrap'}> 
 <VStack  > 
-<Button colorScheme='whatsapp'w='150px' onClick={()=>{HAEMATOLOGY?setstate(false):setstate(true)}}>
+<Button colorScheme='facebook'w='150px' onClick={()=>{HAEMATOLOGY?setstate(false):setstate(true)}}>
 HAEMATOLOGY
 </Button>
-<Button colorScheme='whatsapp' w='150px' onClick={()=>{ESR?setesr(false):setesr(true)}}>
+<Button colorScheme='facebook' w='150px' onClick={()=>{ESR?setesr(false):setesr(true)}}>
 ESR
 </Button>
-<Button colorScheme='whatsapp' w='150px' onClick={()=>{LFT?setlft(false):setlft(true)}}>
+<Button colorScheme='facebook' w='150px' onClick={()=>{LFT?setlft(false):setlft(true)}}>
 LFT
 </Button>
-<Button  colorScheme='whatsapp' w='150px'onClick={()=>{LPT?setlpt(false):setlpt(true)}}>
+<Button  colorScheme='facebook' w='150px'onClick={()=>{LPT?setlpt(false):setlpt(true)}}>
 LPT
 </Button>
-<Button  colorScheme='whatsapp' w='150px'onClick={()=>{IMS?setims(false):setims(true)}}>
+<Button  colorScheme='facebook' w='150px'onClick={()=>{IMS?setims(false):setims(true)}}>
 IMM SERO
 </Button>
-<Button  colorScheme='whatsapp' w='150px'onClick={()=>{RFT?setrft(false):setrft(true)}}>
+<Button  colorScheme='facebook' w='150px'onClick={()=>{RFT?setrft(false):setrft(true)}}>
    RFT
 </Button>
-<Button  colorScheme='whatsapp' w='150px'onClick={()=>{BS?sbs(false):sbs(true)}}>
+<Button  colorScheme='facebook' w='150px'onClick={()=>{BS?sbs(false):sbs(true)}}>
 BIOCHEMISTRY
 </Button>
-<Button  colorScheme='whatsapp' w='150px'onClick={()=>{DN?sdn(false):sdn(true)}}>
+<Button  colorScheme='facebook' w='150px'onClick={()=>{DN?sdn(false):sdn(true)}}>
 DENGUE  ANTIBODY
 </Button>
-<Button  colorScheme='whatsapp' w='150px'onClick={()=>{GT?sgt(false):sgt(true)}}>
+<Button  colorScheme='facebook' w='150px'onClick={()=>{GT?sgt(false):sgt(true)}}>
 GTT
 </Button>
-<Button  colorScheme='whatsapp' w='150px'onClick={()=>{GTU?sgtu(false):sgtu(true)}}>
+<Button  colorScheme='facebook' w='150px'onClick={()=>{GTU?sgtu(false):sgtu(true)}}>
 GTT (URINE)
 </Button>
-<Button  colorScheme='whatsapp' w='150px'onClick={()=>{I?si(false):si(true)}}>
+<Button  colorScheme='facebook' w='150px'onClick={()=>{I?si(false):si(true)}}>
 IMMUNOLOGY
 </Button>
-<Button  colorScheme='whatsapp' w='150px'onClick={()=>{S?ss(false):ss(true)}}>
+<Button  colorScheme='facebook' w='150px'onClick={()=>{S?ss(false):ss(true)}}>
 STOOL EXAM
 </Button>
-<Button  colorScheme='whatsapp' w='150px'onClick={()=>{TH?sth(false):sth(true)}}>
+<Button  colorScheme='facebook' w='150px'onClick={()=>{TH?sth(false):sth(true)}}>
 TYPHIDOT
 </Button>
 </VStack>
 <Box>
- <CircularProgress display={disp} size={'200px'} left='40%' isIndeterminate color='green.300' />
+ <CircularProgress display={disp} position='fixed' size={'200px'} left='40%' isIndeterminate color='green.300' />
  {HAEMATOLOGY?< Repo y={0} x={"HAEMATOLOGY"}/>:""}
  {ESR?< Repo y={1}  x={"ESR"}/>:""}
  {LFT?< Repo  y={2} x={"LIVER FUNCTION TEST"}/>:""}
@@ -177,8 +237,10 @@ TYPHIDOT
  {I?< Repo y={11} x={"IMMUNOLOGY"}/>:""}
  {S?< Repo y={12} x={"STOOL EXAMINATION REPORT"}/>:""}
  {TH?< Repo   y={13}x={"TYPHIDOT CARD TEST"}/>:""}
- <Button
+ <Center>
+ <Button colorScheme={'facebook'}
  onClick={sendata}> Report done</Button>
+ </Center>
 </Box>
  </Flex>
  </>
