@@ -9,8 +9,9 @@ export default  function Allrepo(){
 var [all,rep]=useState([])
 
 useEffect(()=>{
+    // -   ('http://localhost:4000/report/allreport')
     fetch('https://labcare.vercel.app/report/allreport')
-    .then(x=>x.json())
+.then(x=>x.json())
     .then((x)=>rep(x.reports))
 
 },[])

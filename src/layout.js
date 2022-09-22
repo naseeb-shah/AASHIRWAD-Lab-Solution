@@ -137,7 +137,7 @@ Reports
     bottom={'50%'}  fontWeight='500' mt='100px' backgroundColor={'blue.600'}>
        
             <Box lineHeight={'30px'} fontStyle='italic'>
-            <Text  fontSize='30px' textColor={'white'}>
+            <Text  fontSize='30px' textColor={'red.600'}>
             Aashirwad
                 </Text>
                 <HStack>                <Image h='45px'src='https://media1.giphy.com/media/LnW9Odhzh7ssfakcsz/giphy.gif?cid=ecf05e47j6b4nogyu7onxwkcfj21rf6ojxciwbu82kk74s6b&rid=giphy.gif&ct=s'></Image>
@@ -145,8 +145,9 @@ Reports
             
                 </Text>
                 </HStack>
-<Text lineHeight={'5'}>
-LABORATORY FOR HEALTH HUMEN SERVICE :- All Investigations have their limitation which are imposed by the limits of sensitivity and specifity of  Individual assay procedures as well as the specimen received by the laboratory .Isolated laboratory investigations never confirm the final diagnosis of the disease. They only help in arriving at a diagnosis in conjuction with clinical presentation and other related investigations. ( PARTIAL REPRODUCTION OF THE REPORT IS NOT PERMITTED FOR MEDICO LEGAL PURPOSE
+<Text lineHeight={'5'} >
+LABORATORY FOR HEALTH HUMEN SERVICE :-<Text fontSize={'10px'}> All Investigations have their limitation which are imposed by the limits of sensitivity and specifity of  Individual assay procedures as well as the specimen received by the laboratory .Isolated laboratory investigations never confirm the final diagnosis of the disease. They only help in arriving at a diagnosis in conjuction with clinical presentation and other related investigations. ( PARTIAL REPRODUCTION OF THE REPORT IS NOT PERMITTED FOR MEDICO LEGAL )
+</Text>
 </Text>
 
 

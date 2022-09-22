@@ -7,18 +7,19 @@
   left: .4;
 }
 @media print{
+
     #navbar{
       display: none;
     }
     #footer{
-        color:red;
-      font-size: '10px';
+        color:aquamarine;
+      font-size: '20px';
    
     }
     #outprint,#next,#pre{
       display: none;
     }
-    #in{
+    #in,#b{
         display: block;
     }
   }

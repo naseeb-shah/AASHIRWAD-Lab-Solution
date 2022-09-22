@@ -75,8 +75,26 @@ import { useEffect, useState } from "react"
 
 
 export default function SingleTest({test,g}){
-const [index,sindex]=useState(0)
 
+ const Sai=(x)=>{
+    if(x.includes('H')||x.includes('h')||x.includes('L')||x.includes('l')){
+    
+        return(<>
+        <Text fontWeight={400} color={'red'}>{x}</Text>
+        </>)
+
+    }
+    else  {
+        return(<>
+        
+        <Text>{x}</Text>
+        </>)
+
+    }
+    
+    // if(x.includes)
+    
+ }
 
 
  
@@ -87,12 +105,12 @@ const [index,sindex]=useState(0)
             g.map((e)=>{
                 return(
                     <><HStack maxWidth={'800px'} m='auto' pr='5px' pl='5px'>
-                    <Text w='250px'>{e}</Text> <Text w='150px'>{test[e]}</Text>
+                    <Text w='300px'>{e}</Text> <Text w='150px'>{Sai(test[e])}</Text>
                     <Text w='100px'>{val[e][1]}</Text>
-                    <Text>{val[e][2]}</Text>
+                    <Text w='150'>{val[e][2]}</Text>
                     
                     </HStack>
-                    
+                   
                     </>
                 )
             })

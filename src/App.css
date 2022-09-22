@@ -5,9 +5,12 @@
   #footer{
     font-size: '10px';
     font-weight: 100;
+    position: fixed;
     bottom: 0;
+    color: aquamarine;
   }
   .outprint{
     display: none;
   }
+
 }

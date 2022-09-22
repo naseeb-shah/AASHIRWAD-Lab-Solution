@@ -22,10 +22,14 @@ const [index,sindex]=useState(0)
     return(
         <>
         
-         <Flex ><Button position={'fixed'} left='0'id="pre" onClick={()=>{ if(index<g.length-1)sindex(index+1)}} >Pre report</Button><Spacer></Spacer><Button id="next" onClick={()=> {if(index>0)sindex(index-1)}} position={'fixed'} right='0'>Next report</Button></Flex> 
-  <Box>
+         <Flex ><Button position={'fixed'} left='0'id="pre" onClick={()=>{ if(index<g.length-1)sindex(index+1)}} colorScheme='facebook' >Pre report</Button><Spacer></Spacer><Button id="next" onClick={()=> {if(index>0)sindex(index-1)}} position={'fixed'} right='0' colorScheme={'facebook'}>Next report</Button></Flex> 
+  <Box fontStyle={'italic'} 
+
+  >
+    <Image id="b" src='/back.png' position={'fixed'} display='none'  opacity='0.3'></Image>
+   
     <Center>
-  <Text  fontWeight={700} fontSize='25px'>{g[index]}</Text></Center>
+  <Text  fontWeight={600}  fontSize='20px'>{g[index]}</Text></Center>
     <SingleTest test={test[g[index]]} g={Object.keys(test[g[index]])}/>
   </Box>
         {/* <Heading> {JSON.stringify(test[g[index]])}</Heading>

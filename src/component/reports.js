@@ -1,10 +1,11 @@
-import { Heading, Button,Flex, HStack, Text, Input, Box, Center,Image, Spacer } from "@chakra-ui/react"
+import { Heading, Button,Flex, HStack, Text, Input, Box, Center,Image, Spacer, Link } from "@chakra-ui/react"
 import axios from "axios"
 import { useEffect, useState ,useMemo,useRef } from "react"
 import Deen from "./singlereport"
  import { useParams  } from "react-router-dom"
 import JsPDF from 'jspdf';
  import './test.css'
+ import QRCode from "react-qr-code";
 
 
 export default function Report(){
@@ -16,6 +17,7 @@ export default function Report(){
     var totel =[]
 
      var {id }= useParams()
+     
 
      useEffect(()=>{
         // const url='http://localhost:4000/'
@@ -49,37 +51,57 @@ console.log(report)
      const page=useMemo(()=>d=='block'?<Deen g={totel} test={report.test} />:"",[d])
  return (<>
   <Button id="outprint" colorScheme={'facebook'} onClick={generatePDF} >Download Report</Button>
-<Box display={d}
-id="report"
-border='2px' p='25px' maxWidth={'800px'}m='auto'
->
-    <Box id="in">
-        <Center>
-<Text   fontSize='20px' textColor={'white'}>
+
+  <Box  fontStyle={'italic'}  maxWidth={'800px'}m='auto'>
+  
+    <HStack>
+       <Box as={Link}>
+<Text   fontSize='20px' textColor={'white'} color='red'>
             Aashirwad
                 </Text>
-                <HStack>                <Image h='35px'src='https://media1.giphy.com/media/LnW9Odhzh7ssfakcsz/giphy.gif?cid=ecf05e47j6b4nogyu7onxwkcfj21rf6ojxciwbu82kk74s6b&rid=giphy.gif&ct=s'></Image>
+                <HStack>                <Image h='35px'src='/logo.jpg'></Image>
                 <Text  fontSize='20px'textColor={'white'}>Laboratory
             
                 </Text>
                 </HStack>
-                </Center>
                 </Box>
+                <Spacer></Spacer>
+                <QRCode  value={window.location.href} 
+                  size={50}
+                //   style={{ height: "auto", maxWidth: "100%", width: "100%" }}
+                  
+                //   viewBox={`0 0 100 100`}
+                />
+    <Text>M:+91-87087-33011</Text>
+                </HStack>
+                </Box>
+
+
+
+
+
+
+
+<Box display={d}
+id="report"
+border='1px' borderRadius={'10px'} pl='25px'pr='25px' maxWidth={'800px'}m='auto'
+>
+   
     <Box  >
 
    <HStack>{
     }
    
-    <Text>Patient Name : {report.name}</Text>
+    <Text>Patient Name :  {report.name}</Text>
     <Spacer></Spacer>
     <Text> Date :  {report.date} </Text>
 
     </HStack>
     <HStack>
-    <Text>Age/Gender :{report.age} Years / {report.gender}
+    <Text>Age/Gender :  {report.age} Years / {report.gender}
 </Text>
     <Spacer></Spacer>
-    <Text> Report Time :{report.time}</Text>
+    <Text> Report Time :  {report.time}</Text>
 
     </HStack>
     <HStack>
@@ -91,6 +113,10 @@ border='2px' p='25px' maxWidth={'800px'}m='auto'
  
 
 {/* ------------------------------------ */}
+
+</Box>
+
+</Box>
 <Box  p='25px' maxWidth={'800px'}m='auto' >
 <Text fontWeight={'500'} textColor={'green'}>TEST REPORT STATUS 
 </Text>
@@ -104,14 +130,10 @@ border='2px' p='25px' maxWidth={'800px'}m='auto'
 
 </HStack>
 </Box>
-</Box>
+
 {
     page
 }
-</Box>
-
-
-
  </> 
  )
 

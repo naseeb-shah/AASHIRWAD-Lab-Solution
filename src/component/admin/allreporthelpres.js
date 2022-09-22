@@ -38,6 +38,9 @@ return(
             {element.gender}
         </Text>
        
+        <Text w='120px'  borderLeft={'2px'}p='5px' paddingLeft={'4px'}>
+            {element.mobile}
+        </Text>
         <Button colorScheme={'whatsapp'}>
         Payment
         </Button>
