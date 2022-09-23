@@ -1,11 +1,11 @@
 import { Heading, Button, HStack, Text, Input, Box, Center } from "@chakra-ui/react"
 import { useEffect, useState } from "react"
-
+import { useNavigate } from "react-router-dom"
 
 
 
 export default  function Allrepohelper({element}){
-
+var redirect=useNavigate()
 var [all,rep]=useState([])
 
 
@@ -31,9 +31,7 @@ return(
         <Text w='100px'  borderLeft={'2px'}p='5px' paddingLeft={'4px'}>
             {element.time}
         </Text>
-        <Text w='100px'  borderLeft={'2px'}p='5px' paddingLeft={'4px'}>
-            {element.reference}
-        </Text>
+       
         <Text w='70px'  borderLeft={'2px'}p='5px' paddingLeft={'4px'}>
             {element.gender}
         </Text>
@@ -43,6 +41,11 @@ return(
         </Text>
         <Button colorScheme={'whatsapp'}>
         Payment
+        </Button>
+        <Button colorScheme={'yellow'}
+    
+        >
+        Update
         </Button>
         <Text w='170px'  borderLeft={'2px'}p='5px' paddingLeft={'4px'}>
             {"sbumit by"}

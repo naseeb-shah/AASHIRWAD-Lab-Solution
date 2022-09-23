@@ -1,5 +1,5 @@
 import { Center, CircularProgress, CircularProgressLabel, Select } from '@chakra-ui/react'
-import { Heading,Box, FormLabel, Input,HStack ,Flex, Button,Text, VStack} from "@chakra-ui/react";
+import { Heading,Box, FormLabel,Image, Input,HStack ,Flex, Button,Text, VStack} from "@chakra-ui/react";
 import { useState } from "react";
 // import store from "../app/store";
 import { useDispatch,useSelector } from "react-redux"
@@ -37,6 +37,7 @@ const [disp,setdisp]=useState('none')
    const [I,si]=useState(false)
    const [S,ss]=useState(false)
    const [TH,sth]=useState(false)
+   const [mp,smp]=useState(false)
 const Test=(e) =>{
   sr({...per,[e.target.name]:e.target.value})
   console.log(per)
@@ -197,6 +198,9 @@ LPT
 <Button  colorScheme='facebook' w='150px'onClick={()=>{IMS?setims(false):setims(true)}}>
 IMM SERO
 </Button>
+<Button  colorScheme='facebook' w='150px'onClick={()=>{mp?setims(false):smp(true)}}>
+IMM(MP)
+</Button>
 <Button  colorScheme='facebook' w='150px'onClick={()=>{RFT?setrft(false):setrft(true)}}>
    RFT
 </Button>
@@ -223,12 +227,17 @@ TYPHIDOT
 </Button>
 </VStack>
 <Box>
- <CircularProgress display={disp} position='fixed' size={'200px'} left='40%' isIndeterminate color='green.300' />
+   
+ <CircularProgress  value={60} color='blue.600' display={disp} position='fixed' size={'150px'} left='40%'  isIndeterminate>
+  <CircularProgressLabel><Image ocapcity='.5'  w='113px'h='110px' src='/logo.jpg'mt='-54px'ml='17px' position={'absolute'} borderRadius={'50%'} ></Image></CircularProgressLabel>
+</CircularProgress>
+ {/* <CircularProgress  color='green.300' /> */}
  {HAEMATOLOGY?< Repo y={0} x={"HAEMATOLOGY"}/>:""}
  {ESR?< Repo y={1}  x={"ESR"}/>:""}
  {LFT?< Repo  y={2} x={"LIVER FUNCTION TEST"}/>:""}
  {LPT?< Repo  y={3} x={"LIPID PROFILE TEST"}/>:""}
- {IMS?< Repo y={5} x={"IMMUNOLOGY -SEROLOGY"}/>:""}
+ {IMS?< Repo y={5} x={"WIDAL AGGLUTINATION TITRE(IMMUNOLOGY-SEROLOGY)"}/>:""}
+ {mp?< Repo y={5} x={"IMMUNOLOGY-SEROLOGY"}/>:""}
  {RFT?< Repo y={4} x={"RENAL FUNCTION TEST"}/>:""}
  {BS?< Repo y={6}  x={"BIOCHEMISTRY"}/>:""}
  {DN?< Repo  y={7} x={"DENGUE  ANTIBODY  TEST"}/>:""}

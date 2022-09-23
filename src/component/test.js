@@ -1,11 +1,11 @@
 import { Heading, Button,Flex, HStack, Text, Input, Box, Center,Image, Spacer } from "@chakra-ui/react"
-import { useEffect, useState } from "react"
+import { useEffect, useState ,useMemo} from "react"
 
 import SingleTest from "./singletest"
 import  './test.css'
 
 
-
+import Helperprint from "./printreport"
 
 
 
@@ -16,6 +16,7 @@ export default function Test({test,g}){
 const [index,sindex]=useState(0)
 
 
+var  addinfo=useMemo(()=><Helperprint key={g[index]} test={g[index]}></Helperprint>)
     
 
  
@@ -30,11 +31,13 @@ const [index,sindex]=useState(0)
    
     <Center>
   <Text  fontWeight={600}  fontSize='20px'>{g[index]}</Text></Center>
+ 
+  {/* <Text border={'1px'}w='max-content' pr='5px' pl='5px'>Sample Type  : {g[index]=="ESR"?"Whole Body":''}</Text> */}
     <SingleTest test={test[g[index]]} g={Object.keys(test[g[index]])}/>
   </Box>
-        {/* <Heading> {JSON.stringify(test[g[index]])}</Heading>
-        <Heading>{index}</Heading>
-        <Heading>{g.length}</Heading> */}
+        {/* <Heading> {JSON.stringify(g[index])}</Heading> */}
+        {addinfo}
+        {JSON.stringify(g[index])}
         </>
     )
 }

@@ -9,6 +9,7 @@ import Report from './component/reports';
 import Log from './component/login';
 import Allrepo from './component/admin/allreport';
 import Stahome from './component/stats/stats';
+// import UpdateReport from './component/admin/updatereport'
 import { useSelector,useDispatch } from 'react-redux';
  export default function App() {
   var authtype=useSelector((e)=>e.auth.value)
@@ -27,6 +28,7 @@ import { useSelector,useDispatch } from 'react-redux';
        <Route path= "/rep/:id" element={<Report />} />
        <Route path= "/all" element={<Allrepo />} />
        <Route path= "/sta" element={authtype.role=='admin'?<Stahome />:""} />
+       {/* <Route path= "/update/:id" element={authtype.role=='admin'?<UpdateReport/>:""} /> */}
           </Route>
         
       </Routes>

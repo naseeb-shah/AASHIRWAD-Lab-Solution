@@ -19,8 +19,8 @@ useEffect(()=>{
 
 return(
     <>
-    <Box>
-      <HStack mt='100px' backgroundColor={'white'} color='whatsapp'p='5px' border={'2px'}>
+    <Box >
+      <HStack overflowWrap={'hidden'} mt='100px' backgroundColor={'white'} color='whatsapp'p='5px' border={'2px'}>
 
 <Text w='100px' borderLeft={'2px'}p='5px' paddingLeft={'4px'}>
     Name
@@ -52,8 +52,8 @@ Payment
 </Text>
 
 </HStack>
-</Box>
     {all.map((e,i)=><Allrepohelper element={e} key={i+1}/>)}
+</Box>
     {/* { JSON.stringify(all)} */}
     </>
 )

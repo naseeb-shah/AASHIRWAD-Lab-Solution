@@ -8,7 +8,7 @@ var test = {
         ["TOTAL LEUCOCYTE COUNT", "/cumm", "4000 - 11000"],
         ["NEUTROPHIL", " %", "45-75"],
         ["LYMPHOCYTE", "%", "20-40"],
-        ['EOSINOPHIL', '03.00', '%', '01-06'],
+        ['EOSINOPHIL', '%', '01-06'],
         ['MONOCYTE', '%', '0-5'],
         ['BASOPHIL', '%', '0-01'],
         ['R B C (Red Blood Cells) ', 'Mlllions/cmm ', '3.8 - 5.8 '],
@@ -19,6 +19,8 @@ var test = {
         ['M C H', 'picogram', '26-34'],
         ['M C H C', '%', '32-36'],
         ['RDW', '%', '10.0-15.0'],
+        ['TOTAL EOSINOPHIL COUNT' , '%', '40 – 440']
+
 
 
 
@@ -53,12 +55,16 @@ var test = {
         ['CHOL / HDL RATIO', "", '0-4.50'],
         ['LDL / HDL RATIO', "", '0-3.50']
     ],
-    "IMMUNOLOGY -SEROLOGY": [
-        ['MP CARD ( Antigen )', "", "NA"],
+    "WIDAL AGGLUTINATION TITRE(IMMUNOLOGY-SEROLOGY)": [
+      
         ['S.TYPHI"H" ', "", "NA"],
         ['S.TYPHI"O" ', "", "NA"],
         ['S.TYPHI"AH" ', "", "NA"],
         ['S.TYPHI"BH" ', "", "NA"],
+        ['RESULT', "", "NAG/POS"],
+    ],
+    "IMMUNOLOGY-SEROLOGY": [
+        ['MP CARD ( Antigen )', "", "NA"],
     ],
     "RENAL FUNCTION TEST": [
         ['UREA', "mg/dl", '13-15'],
