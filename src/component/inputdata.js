@@ -1,10 +1,9 @@
-import { Center, CircularProgress, CircularProgressLabel, Select } from '@chakra-ui/react'
-import { Heading,Box, FormLabel,Image, Input,HStack ,Flex, Button,Text, VStack} from "@chakra-ui/react";
+import { Box, Button, Center, CircularProgress, CircularProgressLabel, Flex, FormLabel, HStack, Image, Input, Select, Text, VStack } from '@chakra-ui/react';
 import { useState } from "react";
 // import store from "../app/store";
-import { useDispatch,useSelector } from "react-redux"
-import {cleardata} from '../features/handle'
-
+import { useDispatch, useSelector } from "react-redux";
+import { cleardata } from '../features/handle';
+import base from './axios';
 import Repo from "./display";
  export default function Inputdata(){
    var dis=useDispatch()
@@ -38,13 +37,16 @@ const [disp,setdisp]=useState('none')
    const [S,ss]=useState(false)
    const [TH,sth]=useState(false)
    const [mp,smp]=useState(false)
+   const [hh,sh]=useState(false)
+   const [ict,ic]=useState(false)
 const Test=(e) =>{
   sr({...per,[e.target.name]:e.target.value})
   console.log(per)
 
 }
 const sendata=async()=>{
- var sai={ 'tests':store,...per}
+   var techname=localStorage.getItem('cur')
+ var sai={ 'tests':store,techname:techname,...per}
 
 
 if(sai.mobile.length!=10){
@@ -73,20 +75,29 @@ if(sai.time==''){
    alert('Please Enter date')
    return
 }
-
+if(sai.gender==''){
+   alert('Please Enter Gender')
+   return
+}
+if(sai.am==''){
+   alert('Please Enter Amount')
+   return
+}
  console.log(sai)
  setdisp('block')
  setcap(.5)
  const url='https://labcare.vercel.app'
 //  const url='http://localhost:4000/'
- fetch(`${url}/report`, {
-    method: "POST",
-    body: JSON.stringify(sai),
-    headers: {
-        'Content-Type': "application/json"
+ base.post(`/report`, 
+    {
+      ...sai,payment:{
+         s:false,
+         am:sai.am
+      }
     }
-})
-    .then((x) => x.json())
+  
+  
+)
     .then((x) => {
       
       dis(cleardata())
@@ -95,7 +106,7 @@ if(sai.time==''){
       }
       setdisp('none')
       setcap(1)
-      alert(x.response)
+      alert(x.data.response)
       console.log(x)
    })
 
@@ -178,6 +189,13 @@ Mobile No.
 <Input type='Number'  value={per.mobile}name='mobile'backgroundColor={'green.100'} h='30px' onChange={Test} w='300px'>
 </Input>
 </HStack>
+<HStack >
+<FormLabel w='100px'>
+Amount
+</FormLabel>
+<Input type='number' name='am' backgroundColor={'green.100'} h='30px' onChange={Test} w='300px'>
+</Input>
+</HStack>
 </HStack>
  </Box>
  <Flex ml='100px' opacity={cap}
@@ -225,6 +243,12 @@ STOOL EXAM
 <Button  colorScheme='facebook' w='150px'onClick={()=>{TH?sth(false):sth(true)}}>
 TYPHIDOT
 </Button>
+<Button  colorScheme='facebook' w='150px'onClick={()=>{hh?sh(false):sh(true)}}>
+HHH
+</Button>
+<Button  colorScheme='facebook' w='150px'onClick={()=>{ict?ic(false):ic(true)}}>
+ICT
+</Button>
 </VStack>
 <Box>
    
@@ -245,7 +269,10 @@ TYPHIDOT
  {GTU?< Repo y={10}  x={"URINE ANALYSIS"}/>:""}
  {I?< Repo y={11} x={"IMMUNOLOGY"}/>:""}
  {S?< Repo y={12} x={"STOOL EXAMINATION REPORT"}/>:""}
- {TH?< Repo   y={13}x={"TYPHIDOT CARD TEST"}/>:""}
+ {TH?< Repo   y={14}x={"TYPHIDOT CARD TEST"}/>:""}
+    
+ {hh?< Repo   y={13}x={"IMMUNOLOGY-SEROLOGY(HHH)"}/>:""}
+ {ict?< Repo   y={15}x={"HAEMATOLOGY(ICT)"}/>:""}
  <Center>
  <Button colorScheme={'facebook'}
  onClick={sendata}> Report done</Button>

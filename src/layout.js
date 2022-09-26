@@ -1,20 +1,12 @@
-import {Box,Flex,Text,Image, Heading, Divider,Center, HStack,Button} from '@chakra-ui/react'
-import { Outlet ,Link} from 'react-router-dom'
-import{ChevronDownIcon} from '@chakra-ui/icons'
+import { ChevronDownIcon } from '@chakra-ui/icons';
 import {
-    Menu,
-    MenuButton,
-    MenuList,
-    MenuItem,
-    MenuItemOption,
-    MenuGroup,
-    MenuOptionGroup,
-    MenuDivider,
-  } from '@chakra-ui/react'
-import { useSelector,useDispatch } from 'react-redux';
+    Box, Button, Divider, Flex, HStack, Image, Menu,
+    MenuButton, MenuItem, MenuList, Text,Spacer, Center
+} from '@chakra-ui/react';
+import { useDispatch, useSelector } from 'react-redux';
+import { Link, Outlet } from 'react-router-dom';
 import './App.css';
 import { loguser } from './features/authlevel';
-import { useState } from 'react';
 
 
 
@@ -51,10 +43,10 @@ backgroundColor={'blue.600'} alignItems={'center'} justifyContent='space-around'
   </MenuButton>
   <MenuList color={'black'} bg='facebook.500'>
     <MenuItem  as={Link}to='/dr'>Patient Report</MenuItem>
-    <MenuItem>Request to collect Sample</MenuItem>
+    <MenuItem as ={Link} to='/book'>Request to collect Sample</MenuItem>
 
   
-    <MenuItem>Feedback</MenuItem>
+    <MenuItem   as ={Link} to='feed'>Feedback</MenuItem>
   </MenuList>
 </Menu>
 
@@ -80,14 +72,28 @@ Book A test
 </Text>
     </Box>
 
-    
-    <Box>
-<Text fontSize={'20px'} fontWeight='600'display={authtype.addreport} >
+    {/* ------------------------------------------------- */}
+    <Menu>
+  <MenuButton  as={Button} rightIcon={<ChevronDownIcon />} backgroundColor='inherit'  fontSize={'20px'} display={authtype.addreport} >
+    Action
+  </MenuButton>
+  <MenuList color={'black'} bg='facebook.500'>
+    <MenuItem  as={Link}to='/dr'>Requests</MenuItem>
+    <MenuItem as ={Link} to='/report'>Add Report</MenuItem>
+
+  
+    <MenuItem   as ={Link} to='/all'>Search Report</MenuItem>
+  </MenuList>
+</Menu>
+
+{/* ------------------------------------------------------------------- */}
+    {/* <Box>
+<Text fontSize={'20px'} fontWeight='600'>
     <Link to='/report'>
 Add Report
     </Link>
 </Text>
-    </Box>
+    </Box> */}
     
     <Box>
 <Text fontSize={'20px'} fontWeight='600'display={authtype.labstatas} >
@@ -96,13 +102,13 @@ Lab Statas
     </Link>
 </Text>
     </Box>
-    <Box>
+    {/* <Box>
 <Text fontSize={'20px'} fontWeight='600' display={authtype.reports}>
     <Link to='/all'>
 Reports
     </Link>
 </Text>
-    </Box>
+    </Box> */}
     
     <Box>
 <Text fontSize={'20px'} fontWeight='600'>
@@ -157,6 +163,46 @@ Labs All rights reserved.</Text>
 
         </Box>
     </Box>
+
+<Box id='mainfoot' mt='50px'>
+    <HStack  justifyContent={'space-between'}>
+<Box lineHeight={'15px'}>
+    <Text p='0' m='0'fontWeight={500}> Dr. Rajesh Kumar</Text>
+    <Text  p='0' m='0' fontSize={'12px'}> DMLT</Text>
+    <Text  p='0' m='0' fontSize={'12px'}>Ex.  GABA Hospital</Text>
+</Box>
+<HStack>
+       <Box>
+<Text   fontSize='20px' textColor={'white'} color='red'>
+            Aashirwad
+                </Text>
+                <HStack>                <Image h='35px'src='/logo.jpg'></Image>
+                <Text  fontSize='20px'textColor={'grey'}>Laboratory
+            
+                </Text>
+                </HStack>
+                </Box>
+               
+                </HStack>
+
+<Box lineHeight={'15px'}>
+    <Text  p='0' m='0' fontWeight={500}> Dr. Kunal </Text>
+    <Text  p='0' m='0' fontSize={'12px'}> DMLT</Text>
+    <Text  p='0' m='0' fontSize={'12px'}>Civil Hospital</Text>
+</Box>
+
+    </HStack>
+   
+    <Center  >
+    <Text p='3px' borderRadius={'10px'} border='2px' borderColor={'facebook.800'} color={'facebook.600'}>This Report is not Valid Medico legal Purposes</Text>
+    </Center>
+    <Center  >
+    <Text p='3px'  color={'facebook.600'}> ***ADD : NEAR SHIV MANDIR TAHARPUR KALAN, YAMUNANAGAR***
+</Text>
+    </Center>
+    <Divider></Divider>
+
+</Box>
 
    
         </>

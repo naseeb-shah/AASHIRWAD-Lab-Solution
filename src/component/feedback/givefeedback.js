@@ -1,15 +1,17 @@
+import { Box, Button, Center, CircularProgress, CircularProgressLabel, Image, Input, Text } from '@chakra-ui/react';
 
-import {  Alert,
-    AlertIcon,
+import {
+    Alert, AlertDescription, AlertIcon,
     AlertTitle,
-    CloseButton,
-    useDisclosure,
-    AlertDescription,Heading,Box,Select, FormLabel, Input,HStack ,Flex, Button,Text, VStack, Center} from "@chakra-ui/react";
+    CloseButton, Textarea, useDisclosure
+} from "@chakra-ui/react";
 import { useState } from "react";
 
-import base from './axios'
+import base from '../axios';
 
-export default function Book(){
+export default function Feedback(){
+
+    const [wait,fin]=useState("none")
     const {
         isOpen: isVisible,
         onClose,
@@ -19,10 +21,10 @@ export default function Book(){
 
  const [re,se]=useState({
     "name":'',
-    "fname":'',
-    'landmark':'',
+   
+  'msg':'',
     'number':'',
-    "vill":'',
+   
 
  })
 
@@ -41,22 +43,25 @@ alert("Please fill all Details")
 return
 }
  }
- const url='https://labcare.vercel.app'
+ fin('block')
+ 
 //  const url='http://localhost:4000/'
  base.post(`/feed`, {
   
    
-        "type":"Sample",
+        "type":"Feed",
         "name":re.name,
         "mobile":re.number,
-        "address":`${re.fname} ,${re.landmark},${re.vill}`
+        "msg":re.msg
     }
  
 )
     .then((x) => x)
     .then((x) => {
       
-      onOpen()
+      fin("none")
+        onOpen()
+
     
       for(let i in  re){
         
@@ -75,47 +80,30 @@ return
     return (
         <>
 <Center>
-    <Box  textColor={'white'} p='30px' w='max-content' border={'1px'} mt='50px' borderRadius={'15px'}  backgroundColor='blue.600'>
+    <Box  textColor={'white'} p='30px' w='max-content' border={'1px'} mt='50px' borderRadius={'15px'}  borderColor='blackAlpha.50' bg='facebook.400'>
         <Box>
             <Text fontSize={'25px'}> Name (नाम )</Text>
             <Input value={re.name} name='name'h='35px'type={'text'} onChange={handle} autoFocus></Input>
         </Box>
-        <Box>
-            <Text fontSize={'25px'}>Father Name( पिता का नाम )</Text>
-            <Input value={re.fname} name='fname'h='35px'type={'text'} onChange={handle}></Input>
-        </Box>
+        
         <Box>
             <Text fontSize={'25px'}> Mobile No.(मोबाइल न.)</Text>
             <Input value={re.number} name='number'h='35px'type={'text'} onChange={handle}></Input>
         </Box>
         <Box>
-            <Text fontSize={'25px'}>Landmark(नजदीक स्थल )</Text>
-            <Input value={re.landmark} name='landmark'h='35px'type={'text'} onChange={handle}></Input>
+            <Text fontSize={'25px'}>Feedback</Text>
+            <Textarea value={re.msg} name='msg'h='35px'type={'text'} onChange={handle}></Textarea>
         </Box>
-    
+     
+     
 
-<Box>
-            <Text fontSize={'25px'}> Select Village(गांव )</Text>
 
-<Select value={
-    re.vill
-} name='vill' placeholder='Select option' onChange={handle}  color='black'>
-  <option  value='Taharpur Kalan'>Taharpur Kalan</option>
-  <option value='Gohra Bani (236)'>Gohra Bani (236)</option>
-  <option value='Jogiwara (228)'>Jogiwara (228)</option>
-  <option value='Lalhari Kalan (226)'>Lalhari Kalan (226)</option>
-  <option value='Lalhari Khurd (224)'>Lalhari Khurd (224)</option>
-  <option value='Manakpur-1'>Manakpur-1</option>
-  <option value='Tahri (27)'>Tahri (27)</option>
-  <option value='Jogiwara (228)'>Jogiwara (228)</option>
-  <option value='Ibrahimpur (29)'>Ibrahimpur (29)</option>
-  <option value='Ramgarh Alias Arjun Majra (186)'>Ramgarh Alias Arjun Majra (186)
-</option>
-</Select>
-    </Box>
 <Center>
+<CircularProgress  value={60} color='blue.600' display={wait} position='fixed' size={'150px'} left='40%'  isIndeterminate>
+  <CircularProgressLabel><Image ocapcity='.5'  w='113px'h='110px' src='/logo.jpg'mt='-54px'ml='17px' position={'absolute'} borderRadius={'50%'} ></Image></CircularProgressLabel>
+</CircularProgress>
 <Button mt='20px' variant={'outline'} onClick={sai}>
-    Request to Collect Sample
+   Submit
 </Button>
 
 </Center>
@@ -142,6 +130,7 @@ w='400px'
 
     </Box>
 </Center>
+
         
         </>
     )

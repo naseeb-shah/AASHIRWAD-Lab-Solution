@@ -1,4 +1,4 @@
-import { Heading, Button,Flex, HStack, Text, Input, Box, Center,Image, Spacer } from "@chakra-ui/react"
+import { Box, Flex, HStack, Image, Spacer, Text } from "@chakra-ui/react"
 import { useNavigate } from "react-router-dom"
 
 

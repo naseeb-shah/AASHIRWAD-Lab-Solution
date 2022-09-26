@@ -1,12 +1,12 @@
-import { Heading, Button,Flex, HStack, Text, Input, Box, Center,Image, Spacer, Link } from "@chakra-ui/react"
-import axios from "axios"
-import { useEffect, useState ,useMemo,useRef } from "react"
+import { Box, Button, HStack, Image, Link, Spacer, Text } from "@chakra-ui/react"
+import { useEffect, useMemo, useState } from "react"
+import { useParams } from "react-router-dom"
 import Deen from "./singlereport"
- import { useParams  } from "react-router-dom"
-import JsPDF from 'jspdf';
- import './test.css'
- import QRCode from "react-qr-code";
 
+//  import QRCode from "react-qr-code"
+import base from './axios'
+import './test.css'
+import QRCode from "qrcode.react";
 
 export default function Report(){
     
@@ -20,23 +20,25 @@ export default function Report(){
      
 
      useEffect(()=>{
-        // const url='http://localhost:4000/'
-         const url='https://labcare.vercel.app/'
-        axios.get(`${url}report/id/${id}`)
+       
+        base.get(`/report/id/${id}`)
         .then(x=>{
-            console.log(x)
+          
             setreport(x.data.reports[0])
             sd("block")
-console.log(report)
+
            
         }).catch((e)=>console.log(e))
 
      },[])
-   
+     function cleanDate(d) {return new Date(+d.replace(/\/Date\((\d+)\)\//, '$1'));}
+   var daa
      if(d==='block'){
+         daa=cleanDate(report.date)
+        daa=new Date(daa)
     totel=Object.keys(report.test)
      }
-     
+      console.log(window.location.href)
      const generatePDF = () => {
 
         // const report = new JsPDF('portrait','pt','a4');
@@ -66,7 +68,7 @@ console.log(report)
                 </HStack>
                 </Box>
                 <Spacer></Spacer>
-                <QRCode  value={window.location.href} 
+                <QRCode  value={`${window.location.href}`} 
                   size={50}
                 //   style={{ height: "auto", maxWidth: "100%", width: "100%" }}
                   
@@ -94,7 +96,7 @@ border='1px' borderRadius={'10px'} pl='25px'pr='25px' maxWidth={'800px'}m='auto'
    
     <Text>Patient Name :  {report.name}</Text>
     <Spacer></Spacer>
-    <Text> Date :  {report.date} </Text>
+    <Text> Date :  {d=='block'?JSON.stringify(daa).substring(1,11):''} </Text>
 
     </HStack>
     <HStack>

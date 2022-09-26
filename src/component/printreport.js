@@ -255,6 +255,111 @@ the trunks and limbs, vomiting and mild hemorrhaging ( in children).
         </Box>
         
         </>)
+}else if(test=='IMMUNOLOGY-SEROLOGY(HHH)'){
+    return(
+        <>
+        <Box>
+        <Text border={'1px'} p='1.5px'w= 'max-content' fontStyle={'italic'}> Primary Sample Type : Serum
+</Text>
+<Box>
+    <Text ml='10px'>NOTE</Text>
+    <Text ml='20px'>HBSag ( Australia Antigen ) </Text>
+    <Text ml='30px'>This test will only indicate the presenceof Hepatitis B Surface
+ Antigen in the specimen as should not be used as a sole criteria
+ for the diagnosis of Hepatitis B viral infection.
+</Text>
+    <Text ml='30px'>In less then 1 % of cases false Positive result can be obtained due
+ To presence of other antigens.</Text>
+    <Text ml='20px'>VDRL (Syphilies)</Text>
+    <Text ml='30px'>In the early and latent stares of the disease, there may be false negative result.
+</Text>
+<Text ml='30px'>
+Acute or chronic infection such as leprosy. Lipus erythromatosus, may lead to false – Positive result. 
+
+</Text>
+
+
+ <Text ml='10px'>INTERPERTATION :-
+</Text>
+    <Text ml='20px'>HCV ANTIBODY TEST  </Text>
+    <Text ml='30px'>Anti HCV total antibody assay identifies presence IgG antibodies in the serum. It is a useful
+screening test with a specificity of nearl’
+</Text>
+    <Text ml='30px'>It becomes positive approximately 24 weeks after exposure. The test can not isolate an active
+ongoing HCV infection from an old infe has been cleared. All positive result must be confirmed
+for active disease by an HCV PCR test.
+</Text>
+    <Text ml='20px'>HIV ( AIDS ) ANTIBODY I & II </Text>
+    <Text ml='30px'>
+    
+    </Text>
+    <Text ml='30px'>
+    A Non – Reactive Result implies that no Anti HIV – II Antibodies have been detected by this method.
+
+    </Text>
+    <Text ml='30px'>
+    This means that either tha patient has not been exposed to HIV I & II infection or The sample has been
+tested during window phase ( before the development of Detected level of Antibodies. )
+    </Text>
+    <Text ml='30px'>
+    A Provisionally reactive / borderling reae result suggests the possibility of HIV I & HIV II infection.
+
+    </Text>
+    <Text>
+    Please not that very high level of IgM Antibodies or Anti HLA ABC & DR Antibodies can give FALSE
+POSITIVE reaction. 
+    </Text>
+</Box>
+
+
+
+
+        </Box>
+        
+        
+        
+        </>
+    )
+}
+else if(test=='HAEMATOLOGY(ICT)'){
+    return(
+        <>
+         <Box maxW={'800px'} m='auto'  p='20px'>
+        <Text border={'1px'} p='1.5px'w= 'max-content' fontStyle={'italic'}>Primary Sample Type : Serum
+</Text>
+          
+        <Text m='10px'>
+        **End of Reports**
+        </Text>
+
+        </Box>
+
+        
+        </>
+    )
+}
+else if(test=='RENAL FUNCTION TEST'){
+    return(
+        <>
+         <Box maxW={'800px'} m='auto'  p='20px'>
+        <Text border={'1px'} p='1.5px'w= 'max-content' fontStyle={'italic'}>Primary Sample Type : Serum
+</Text>
+<Text ml='10px'>Note</Text>
+<Text ml='30px'>
+* UREA, S CREATININE, URIC ACID , and CALCIUM BOTH Test done on Spectrum Auto Biochemistry Analyser.
+
+
+</Text>
+          
+        <Text m='10px'>
+        **End of Reports**
+        </Text>
+
+        </Box>
+
+        
+        </>
+    )
 }
 
 }

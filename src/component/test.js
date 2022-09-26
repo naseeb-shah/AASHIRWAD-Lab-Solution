@@ -37,7 +37,7 @@ var  addinfo=useMemo(()=><Helperprint key={g[index]} test={g[index]}></Helperpri
   </Box>
         {/* <Heading> {JSON.stringify(g[index])}</Heading> */}
         {addinfo}
-        {JSON.stringify(g[index])}
+        {/* {JSON.stringify(g[index])} */}
         </>
     )
 }

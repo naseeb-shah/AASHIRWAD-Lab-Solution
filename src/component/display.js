@@ -114,7 +114,18 @@ var test = {
     "TYPHIDOT CARD TEST":[
     ['IGM ANTIBODY TEST','','NA'],
     ['IGG ANTIBODY TEST','','NA']
-    ]
+    ],
+    "IMMUNOLOGY-SEROLOGY(HHH)":[
+        ['HBSag ( Australia Antigen )' ,"" ,'NA'],
+       [ 'HCV ANTIBODY TEST' , '' ,'NA'],
+       ['HIV ( AIDS ) ANTIBODY I & II' ,'' ,'NA'
+       ],
+       ['VDRL (Syphilies)' ,'', 'NA' 
+       ],
+      ],
+      'HAEMATOLOGY(ICT)':[
+        ['INDIRECT COOMBS TEST','', 'NEG/POS']
+       ]
 
 
 }

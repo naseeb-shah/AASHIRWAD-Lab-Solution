@@ -1,3 +1,8 @@
+#mainfoot{
+  display: none;
+}
+
+
 @media print{
   #navbar,#copy{
     display: none;
@@ -8,9 +13,16 @@
     position: fixed;
     bottom: 0;
     color: aquamarine;
+    display: none;
   }
   .outprint{
     display: none;
+  }
+  #mainfoot{
+    display: block;
+position: fixed;
+width: 100%;
+bottom:0;
   }
 
 }

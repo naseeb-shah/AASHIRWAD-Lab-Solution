@@ -1,14 +1,13 @@
 import {
-  Image,
-  Select,
   AlertDialog,
   AlertDialogBody, AlertDialogContent, AlertDialogFooter,
-  AlertDialogHeader, AlertDialogOverlay, Box, Button, Center, Flex, HStack, Input, Link, Spinner, Text, useDisclosure
+  AlertDialogHeader, AlertDialogOverlay, Box, Button, Center, Flex, HStack, Image, Input, Select, Spinner, Text, useDisclosure
 } from '@chakra-ui/react'
 import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
-  import {Setuser,loguser} from '../features/authlevel'
+import { useNavigate } from 'react-router-dom'
+import { Setuser } from '../features/authlevel'
+import base from './axios'
 export default function Log() {
   var dispatch=useDispatch()
   var redirect = useNavigate()
@@ -27,7 +26,7 @@ export default function Log() {
   const Handler = (e) => {
 
     sus({ ...us, [e.target.name]: e.target.value })
-    console.log(us)
+   
   }
 
 
@@ -50,17 +49,17 @@ export default function Log() {
 
     console.log(us)
     
-    fetch('https://labcare.vercel.app/admin/log', {
-      method: "POST",
-      body: JSON.stringify(us),
-      headers: {
-        'Content-Type': "application/json"
-      },
-    }).then(x => x.json()).then(x => {
+    base.post('/admin/log', 
+     
+    us
+    ).then(x =>{
+      console.log(x.data)
       sps(false)
-     var  res=x.response
-  if(x.status=="Successfully"){
-   
+     var  res=x.data.response
+     console.log(x.data)
+  if(x.data.status=="Successfully"){
+    localStorage.setItem('cur', x.data.response.name)
+    sessionStorage.setItem('cur', x.data.response.name)
       set({
         h: `${res.name}`,
         b: " Welcome to AASHIRWAD LABORATORY",
@@ -88,11 +87,11 @@ if(res.role=='admin'){
 
 
       onOpen()
-      shelper(x.response)
+      shelper(x.data.response)
      
-      if (x.response._id) {
+      if (x.data.response._id) {
         // dispatch(login(x))
-        localStorage.setItem('cur', JSON.stringify(x))
+       
         localStorage.setItem('id', x._id)
 
       }
@@ -100,11 +99,11 @@ if(res.role=='admin'){
     }
     else{
       set({
-        h: `${x.response}`,
+        h: `${x.data.response}`,
         b: "Please try with correct details",
         button: 'Try Again'
       })
-      shelper(x.response)
+      shelper(x.data.response)
       onOpen()
       
 
@@ -123,11 +122,9 @@ if(res.role=='admin'){
   }
 
   const goto = () => {
-    if (helper ==='Credainls Invalid') {
-      redirect('/log')
-    } else {
-      redirect('/')
-    }
+   if(sessionStorage.getItem("cur")){
+    redirect('/')
+   }
   }
   return (
     <>

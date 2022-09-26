@@ -1,8 +1,8 @@
 import { Heading, Button, HStack, Text, Input, Box, Center } from "@chakra-ui/react"
 import { useEffect, useState } from "react"
 import base from '../axios'
-
 import Allrepohelper from "./allreporthelpres"
+
 
 export default  function Allrepo(){
 
@@ -15,6 +15,7 @@ useEffect(()=>{
     .then(x=>rep({data:x.data.reports}))
 }
 ,[])
+
 
 return(
     <>
@@ -40,22 +41,6 @@ return(
 
 <Text w='100px'  borderLeft={'2px'}p='5px' paddingLeft={'4px'}   >
     Date
-</Text>
-
-<Text w='100px'  borderLeft={'2px'}p='5px' paddingLeft={'4px'}   >
-Reference
-</Text>
-<Text w='70px'  borderLeft={'2px'}p='5px' paddingLeft={'4px'}   >
-    Gender
-</Text><Text w='170px'  borderLeft={'2px'}p='5px' paddingLeft={'4px'}   >
-    Mobile
-</Text>
-
-<Text colorScheme={'whatsapp'}>
-Payment
-</Text>
-<Text w='170px'  borderLeft={'2px'}p='5px' paddingLeft={'4px'}>
-    {"sbumit by"}
 </Text>
 
 </HStack>

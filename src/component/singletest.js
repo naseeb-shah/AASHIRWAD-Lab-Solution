@@ -1,5 +1,4 @@
-import { Heading, Button,Flex, HStack, Text, Input, Box, Center,Image, Spacer } from "@chakra-ui/react"
-import { useEffect, useState } from "react"
+import { HStack, Text } from "@chakra-ui/react"
 
  let val={ 'HAEMOGLOBIN (HB)': [ 'HAEMOGLOBIN (HB)', 'gm/dl', '11 – 16' ],
   'TOTAL LEUCOCYTE COUNT': [ 'TOTAL LEUCOCYTE COUNT', '/cumm', '4000 - 11000' ],
@@ -68,7 +67,16 @@ import { useEffect, useState } from "react"
   'VEG CELL': [ 'VEG CELL', '', 'NIL' ],
   'STOOL FOR OCCULT BLOOD': [ 'STOOL FOR OCCULT BLOOD', '', 'NEG/POS' ],
   'IGM ANTIBODY TEST': [ 'IGM ANTIBODY TEST', '', 'NA' ],
-  'IGG ANTIBODY TEST': [ 'IGG ANTIBODY TEST', '', 'NA' ] }
+  'IGG ANTIBODY TEST': [ 'IGG ANTIBODY TEST', '', 'NA' ] ,
+  'HBSag ( Australia Antigen )':  ['HBSag ( Australia Antigen )' ,"" ,'NA'],
+  'HCV ANTIBODY TEST':[ 'HCV ANTIBODY TEST' , '' ,'NA'],
+  'HIV ( AIDS ) ANTIBODY I & II': ['HIV ( AIDS ) ANTIBODY I & II' ,'' ,'NA'
+  ],
+  'VDRL (Syphilies)':  ['VDRL (Syphilies)' ,'', 'NA' 
+]
+,'INDIRECT COOMBS TEST':['INDIRECT COOMBS TEST','', 'NEG/POS']
+
+}
 
 
 

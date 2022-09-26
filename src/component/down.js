@@ -5,7 +5,7 @@ import { CircularProgressLabel } from '@chakra-ui/react'
 import { useState } from "react"
 import List from "./showlistofreports"
 import ReactToPrint from 'react-to-print';
-
+import sai from './axios'
 
 
 export default function(){
@@ -18,9 +18,10 @@ export default function(){
  const getreport=()=>{
   if(al=='none'){
     s('block')
-    axios.get(`https://labcare.vercel.app/report/m/${phone}`)
+    sai.get(`/report/m/${phone}`)
     .then(x=>{
       s('none')
+      console.log(x.data.reports)
       sr(x.data.reports)}).catch((e)=>console.log(e))
   }
  }
