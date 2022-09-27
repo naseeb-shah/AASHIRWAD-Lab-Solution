@@ -13,14 +13,14 @@ deensahh('/book')
 
 
     return <>
-  <Box backgroundColor={'whiteAlpha.600'}>
+  <Box backgroundColor={'whiteAlpha.300'}>
 
   
     <Box pt='80px' >
     <Heading  textShadow={'revert'} fontStyle={'italic'} textAlign='center' mb='50px' color={'yellowgreen'}>
         Welcome to Aashirwad Labs
     </Heading>
-    <Image   src='/sai.jpg' m='auto'  boxShadow={'outline'}>
+    <Image   src='/sai.jpg' m='auto' opacity={.5} boxShadow={'outline'}>
 
 </Image>
 </Box>

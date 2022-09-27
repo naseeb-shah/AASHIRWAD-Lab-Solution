@@ -112,7 +112,9 @@ Reports
     
     <Box>
 <Text fontSize={'20px'} fontWeight='600'>
+    <Link to={'/con'}>
     Contact Us
+    </Link>
 </Text>
     </Box>
     <Box>

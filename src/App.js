@@ -34,6 +34,7 @@ export default function App() {
           <Route path="/log" element={<Log />} />
           <Route path="/feed" element={<Feedback />} />
           <Route path="/feedorg" element={<Feed />} />
+          <Route path="/con" element={<Feed />} />
 
           <Route path="/rep/:id" element={<Report />} />
           <Route path="/all" element={<Allrepo />} />
