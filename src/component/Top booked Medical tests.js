@@ -17,7 +17,7 @@ deensahh('/book')
 
   
     <Box pt='80px' >
-    <Heading  textShadow={'revert'} fontStyle={'italic'} textAlign='center' mb='50px' color={'yellowgreen'}>
+    <Heading  textShadow={'revert'} fontStyle={'italic'} textAlign='center' mb='50px' color={'blue'}>
         Welcome to Aashirwad Labs
     </Heading>
     <Image   src='/sai.jpg' m='auto'  boxShadow={'outline'}>
