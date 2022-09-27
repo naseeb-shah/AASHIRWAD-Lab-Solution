@@ -1,6 +1,7 @@
 import axios from 'axios';
-const instance = axios.create({baseURL:"http://localhost:4000" })
+const url= "https://labcare.vercel.app"
+//  const url="http://localhost:4000"
+const instance = axios.create({baseURL:url })
 
 
 export default instance
-// "https://labcare.vercel.app"
