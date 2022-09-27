@@ -106,10 +106,11 @@ if(val.techname){
 // var relteddata=all.
 
     return (<>
-<HStack m='40px' flexwrap='wrap'>
+     <Box  backgroundColor={'whiteAlpha.700'} pt='30px' pb='30px'>
+<HStack m='40px' flexwrap='wrap'   >
     
-   <Box> <Input type={'Date'} name='start' onChange={handle}   ></Input></Box>
-   <Box> <Input  type={'Date'} name='end'   onChange={handle}  ></Input></Box>
+   <Box> <Input type={'Date'} name='start' onChange={handle}  bg='blackAlpha.400' ></Input></Box>
+   <Box> <Input  type={'Date'} name='end'   onChange={handle} bg='blackAlpha.400' ></Input></Box>
    <Button variant={'outline'} colorScheme='facebook' onClick={timedata}>Time Period</Button>
      </HStack>
     <CircularProgress display={d} value={60} color='blue.600' position='fixed' size={'150px'} left='40%'  isIndeterminate>
@@ -177,6 +178,8 @@ if(val.techname){
 
 <Box maxWidth='800px'  m='auto'mt='50px' >
 {currentdoc.map((e,i)=><Allrepohelper element={e} key={i+1}/>)}
+</Box>
+
 </Box>
     </>)
 }

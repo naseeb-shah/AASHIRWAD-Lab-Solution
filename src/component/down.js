@@ -27,9 +27,9 @@ export default function(){
  }
     return (<>
     
-    <HStack flexWrap={'wrap'} pt='50px'ml='80px'>
+    <HStack flexWrap={'wrap'} pt='50px'ml='80px'   >
         {/* <Image h='150px'src='https://media1.giphy.com/media/St3NH8X8DMq52JyMOF/giphy.gif?cid=ecf05e47wopg20i7hy9afhl30z5jbjro8w1eeewl9lqlvtw0&rid=giphy.gif&ct=s'></Image> */}
-<Box backgroundColor={'blue.600'}p='15px' borderRadius='10px' color={'white'}>
+<Box  backgroundColor='blackAlpha.400' p='15px' borderRadius='10px' color={'white'}>
     <Text fontSize={'25px'}  fontStyle='italic'>
         Download Report
     </Text>
@@ -58,7 +58,7 @@ export default function(){
  <CircularProgress ml='100px'mt='-100px' position={'fixed'} display={l} value={60} color='blue.500'size='125px' isIndeterminate>
   <CircularProgressLabel><Image ocapcity='.2'  w='100px'h='100px' src='/logo.jpg'mt='-49px'ml='9px' position={'absolute'} borderRadius={'50%'} ></Image></CircularProgressLabel>
 </CircularProgress>
- <Box w='max-content'>
+ <Box w='max-content'  >
 {reports.length>0?< List  key={1}data={reports}></List>:''}
 </Box>
     </>)

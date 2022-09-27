@@ -1,6 +1,10 @@
 #mainfoot{
   display: none;
 }
+#out{
+  background-image:url('../public/5.jpg');
+ 
+}
 
 
 @media print{

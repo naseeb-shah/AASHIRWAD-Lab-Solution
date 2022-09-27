@@ -80,7 +80,7 @@ return
     return (
         <>
 <Center>
-    <Box  textColor={'white'} p='30px' w='max-content' border={'1px'} mt='50px' borderRadius={'15px'}  borderColor='blackAlpha.50' bg='facebook.400'>
+    <Box   textColor={'white'} p='30px' w='max-content' border={'1px'} mt='50px' borderRadius={'15px'}  borderColor='blackAlpha.50' bg='blackAlpha.400'>
         <Box>
             <Text fontSize={'25px'}> Name (नाम )</Text>
             <Input value={re.name} name='name'h='35px'type={'text'} onChange={handle} autoFocus></Input>

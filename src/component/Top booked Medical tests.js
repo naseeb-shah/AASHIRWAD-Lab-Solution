@@ -13,8 +13,10 @@ deensahh('/book')
 
 
     return <>
+  <Box backgroundColor={'whiteAlpha.600'}>
+
   
-    <Box pt='80px'>
+    <Box pt='80px' >
     <Heading  textShadow={'revert'} fontStyle={'italic'} textAlign='center' mb='50px' color={'yellowgreen'}>
         Welcome to Aashirwad Labs
     </Heading>
@@ -22,7 +24,7 @@ deensahh('/book')
 
 </Image>
 </Box>
-    <Box ml='10%' mt='30px' >
+    <Box ml='10%' mt='30px'  >
         
 <Heading fontSize={'30px'} textColor='yellowgreen' fontStyle={'italic'}>Top Booked Medical Tests
 </Heading>
@@ -213,7 +215,7 @@ Also known as Triglycerides Blood Test
 </Flex>
 
     </Box>
-    
+    </Box>
     
     </>
 }

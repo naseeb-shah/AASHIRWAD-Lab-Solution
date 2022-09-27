@@ -135,7 +135,12 @@ Reports
     </Flex>  
     <Divider>
         </Divider>  
-        </Box><Box  backgroundColor={'facebook.50'} backgroundAttachment='fixed' minHeight={'400px'}>
+        </Box><Box id='out' backgroundColor={'facebook.50'} backgroundAttachment='fixed' minHeight={'400px'}
+        
+        // backgroundImage='./labo.jpg'
+        backgroundSize={'cover'}
+     
+        >
 
         
     <Outlet></Outlet>

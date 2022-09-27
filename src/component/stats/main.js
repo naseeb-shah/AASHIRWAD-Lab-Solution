@@ -65,6 +65,7 @@ if(val.techname){
       alert("Some Thing Went Wrong !")
     })
 
+
  },[])
 
  const handle=(e)=>{
@@ -137,9 +138,11 @@ if(val.techname){
 
 
     return (<>
-<HStack m='40px' flexwrap='wrap'>
-   <Box> <Input type={'Date'} name='start' onChange={handle}   ></Input></Box>
-   <Box> <Input  type={'Date'} name='end'   onChange={handle}  ></Input></Box>
+
+    <Box  backgroundColor={'whiteAlpha.700'} pt='30px' pb='50px'>
+<HStack m='40px' flexwrap='wrap'  >
+   <Box> <Input type={'Date'} name='start' onChange={handle}  bg='blackAlpha.400' ></Input></Box>
+   <Box> <Input  type={'Date'} name='end'   onChange={handle} bg='blackAlpha.400' ></Input></Box>
    <Button variant={'outline'} colorScheme='facebook' onClick={timedata}>Time Period</Button>
 </HStack>
     <CircularProgress display={d} value={60} color='blue.600' position='fixed' size={'150px'} left='40%'  isIndeterminate>
@@ -278,6 +281,7 @@ if(val.techname){
 </Box>
 
 </HStack>
+</Box>
 
     </>)
 }

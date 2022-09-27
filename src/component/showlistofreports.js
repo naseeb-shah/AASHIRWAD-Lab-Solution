@@ -12,7 +12,7 @@ export default function List({data,key}){
     
      return(
         <>
-        <HStack key={key}fontStyle={'italic'} ml='80px'w={'400'} p='30px' background={'blue.600'} flexWrap={'wrap'} textColor='black' borderRadius={'10px'} border='1px' borderRight={'none'}>
+        <HStack key={key}fontStyle={'italic'} ml='80px'w={'400'} p='30px'  backgroundColor='blackAlpha.400' flexWrap={'wrap'} textColor='white' borderRadius={'10px'} border='1px' borderRight={'none'}>
             
            
             

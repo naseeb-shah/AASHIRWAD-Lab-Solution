@@ -75,7 +75,13 @@ return
     return (
         <>
 <Center>
-    <Box  textColor={'white'} p='30px' w='max-content' border={'1px'} mt='50px' borderRadius={'15px'}  backgroundColor='blue.600'>
+    <Box  textColor={'white'} p='30px' w='max-content' border={'1px'} mt='50px' borderRadius={'15px'}  backgroundColor='blue.600'nack
+    
+   
+    backgroundColor='blackAlpha.400'
+    // backgroundSize='cover'
+    
+    >
         <Box>
             <Text fontSize={'25px'}> Name (नाम )</Text>
             <Input value={re.name} name='name'h='35px'type={'text'} onChange={handle} autoFocus></Input>
