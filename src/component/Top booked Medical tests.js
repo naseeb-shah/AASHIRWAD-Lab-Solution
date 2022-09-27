@@ -20,7 +20,7 @@ deensahh('/book')
     <Heading  textShadow={'revert'} fontStyle={'italic'} textAlign='center' mb='50px' color={'blue'}>
         Welcome to Aashirwad Labs
     </Heading>
-    <Image   src='/sai.jpg' m='auto' opacity={.5} boxShadow={'outline'}>
+    <Image   src='/sai.jpg' m='auto'boxShadow={'outline'}>
 
 </Image>
 </Box>
