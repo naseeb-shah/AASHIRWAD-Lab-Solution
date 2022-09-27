@@ -78,7 +78,7 @@ Book A test
     Action
   </MenuButton>
   <MenuList color={'black'} bg='facebook.500'>
-    <MenuItem  as={Link}to='/dr'>Requests</MenuItem>
+    <MenuItem  as={Link}to='/feedorg'>Requests</MenuItem>
     <MenuItem as ={Link} to='/report'>Add Report</MenuItem>
 
   

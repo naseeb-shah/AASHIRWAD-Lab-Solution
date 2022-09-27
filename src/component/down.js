@@ -12,7 +12,10 @@ export default function(){
  const [phone,sphone]=useState('')
  const[al,sal]=useState('block')
  const[l,s]=useState('none')
- const[reports,sr]=useState([])
+ const[reports,sr]=useState({
+  re:[],
+  se:false
+ })
 
 
  const getreport=()=>{
@@ -22,7 +25,7 @@ export default function(){
     .then(x=>{
       s('none')
       console.log(x.data.reports)
-      sr(x.data.reports)}).catch((e)=>console.log(e))
+      sr({re:x.data.reports,se:true})}).catch((e)=>console.log(e))
   }
  }
     return (<>
@@ -47,6 +50,7 @@ export default function(){
 <Button  variant={'outline'} onClick={getreport}>
     Get Report
 </Button>
+{reports.re.length==0&&reports.se?"No report Found":""}
 
 </Box>
 
@@ -59,7 +63,8 @@ export default function(){
   <CircularProgressLabel><Image ocapcity='.2'  w='100px'h='100px' src='/logo.jpg'mt='-49px'ml='9px' position={'absolute'} borderRadius={'50%'} ></Image></CircularProgressLabel>
 </CircularProgress>
  <Box w='max-content'  >
-{reports.length>0?< List  key={1}data={reports}></List>:''}
+{reports.re.length>0?< List  key={1}data={reports.re}></List>:''}
+
 </Box>
     </>)
 }

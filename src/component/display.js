@@ -150,16 +150,16 @@ export default function Repo({ x,y}) {
 
     return (
         <>
-            <Box key={y} ml='50px' mt='50px' border={'2px'} borderColor='green' borderRadius={'15px'}>
+            <Box key={y} ml='50px' mt='50px' border={'2px'} borderColor='green' borderRadius={'15px'} bg='blackAlpha.400' textColor={'white'} >
                 <Center>
-                    <Text fontWeight={600} fontSize={'25px'} p='10px' color='green' borderRadius={'15px'} fontStyle="italic" borderLeft={'4px'} borderLeftColor='green '>{x}</Text>
+                    <Text fontWeight={600} fontSize={'25px'} p='10px' color='white' borderRadius={'15px'} fontStyle="italic" borderLeft={'4px'} borderLeftColor='green '>{x}</Text>
 
                 </Center>  {
                     test[x].map((e, i) => {
 
                         return (
                             <>
-                                <HStack m='20px' color={'black'} fontWeight='500' key={i}>
+                                <HStack m='20px' color={'white'} fontWeight='500' key={i} >
                                     <Text w='300px'>{e[0]}</Text>
                                     <Input border='2px' name={e[0]} onChange={onhan} borderColor={'yellow.200'} w='100px'></Input>
                                     <Text w='100px'>{e[1]}</Text>

@@ -8,7 +8,7 @@ export default  function Allrepohelper({element,fun}){
     
 const s=cleanDate(element.date)
     function cleanDate(d) {return new Date(+d.replace(/\/Date\((\d+)\)\//, '$1'));}
-
+console.log(s)
 
 var sai=false
 const pay=(id)=>{

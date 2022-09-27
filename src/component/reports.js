@@ -86,6 +86,8 @@ export default function Report(){
 
 <Box display={d}
 id="report"
+
+bg='whiteAlpha.400'
 border='1px' borderRadius={'10px'} pl='25px'pr='25px' maxWidth={'800px'}m='auto'
 >
    
@@ -119,7 +121,7 @@ border='1px' borderRadius={'10px'} pl='25px'pr='25px' maxWidth={'800px'}m='auto'
 </Box>
 
 </Box>
-<Box  p='25px' maxWidth={'800px'}m='auto' >
+<Box  p='25px' maxWidth={'800px'}m='auto' bg='whiteAlpha.700' >
 <Text fontWeight={'500'} textColor={'green'}>TEST REPORT STATUS 
 </Text>
 <HStack justifyContent={'space-between'} border={'2px'}pl='5px' pr='5px'>

@@ -9,11 +9,13 @@ import { useDispatch, useSelector } from "react-redux"
 import base from '../axios'
 import { getdata } from "../stats"
 export default function Main(){
+   var [req,sreq]=useState({main:[],up:[]})
+
    const dis=useDispatch()
    const [d,s]=useState('none')
    const [date,setdate]=useState({})
    const all=useSelector(e=>e.alldata.value)
-console.log(all)
+
  useEffect(()=>{
    s('block')
     base.get('/report/allreport')
@@ -65,7 +67,9 @@ if(val.techname){
       alert("Some Thing Went Wrong !")
     })
 
-
+base.get('/feed')
+.then((x)=>sreq({main:x.data.reports,up:x.data.reports}))
+.then(x=>console.log(req))
  },[])
 
  const handle=(e)=>{
@@ -193,10 +197,10 @@ if(val.techname){
 </Box>
 <Box  fontStyle={'italic'}w='400px'>
    <Text fontSize={'30px'}> Request Statas</Text>
-   <CircularProgress  value={(all.sale/all.credit)*100} color='blue.600' size={'150px'} left='30%'  >
+   <CircularProgress  value={(req.up.length/req.up.filter(e=>e.done==true).length)*100} color='blue.600' size={'150px'} left='30%'  >
   <CircularProgressLabel>
-   <Text  fontSize={'20px'} textColor={'red'}>{all.sale}</Text>
-   <Text fontSize={'20px'} textColor={'green'}>{all.cash}</Text>
+   <Text  fontSize={'20px'} textColor={'red'}>{req.up.length-(req.up.filter(e=>e.done==true).length)}</Text>
+   <Text fontSize={'20px'} textColor={'green'}>{req.up.filter(e=>e.done==true).length}</Text>
   </CircularProgressLabel>
 </CircularProgress>
 
@@ -206,7 +210,7 @@ if(val.techname){
    </Text>
    <Spacer></Spacer>
    <Text fontSize={'20px'} fontWeight='500'  color='blue'>
-   {all.sale}
+   {req.up.length}
    </Text>
    </Flex>
     <Flex w='300px' >
@@ -215,7 +219,7 @@ if(val.techname){
    </Text>
    <Spacer></Spacer>
    <Text fontSize={'20px'} fontWeight='500'  color='green'>
-   {all.cash}
+   {req.up.filter(e=>e.done==true).length}
    </Text>
    </Flex>
     <Flex w='300px' >
@@ -224,7 +228,7 @@ if(val.techname){
    </Text>
    <Spacer></Spacer>
    <Text fontSize={'20px'} fontWeight='500'  color='red'>
-   {all.credit}
+   {req.up.length-req.up.filter(e=>e.done==true).length}
    </Text>
    </Flex>
    
@@ -270,7 +274,7 @@ if(val.techname){
 }
 </Box>
 <Box fontSize={'30px'} fontWeight='500' >
-<Text>Total Technicain</Text>
+<Text>Total Technician</Text>
 {
    all.tech.length>0? all.tech.map((e,i)=><Text>{i+1} Dr. {e}</Text>):''
 }

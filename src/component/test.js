@@ -25,6 +25,7 @@ var  addinfo=useMemo(()=><Helperprint key={g[index]} test={g[index]}></Helperpri
         
          <Flex ><Button position={'fixed'} left='0'id="pre" onClick={()=>{ if(index<g.length-1)sindex(index+1)}} colorScheme='facebook' >Pre report</Button><Spacer></Spacer><Button id="next" onClick={()=> {if(index>0)sindex(index-1)}} position={'fixed'} right='0' colorScheme={'facebook'}>Next report</Button></Flex> 
   <Box fontStyle={'italic'} 
+  bg='whiteAlpha.700'
 
   >
     <Image id="b" src='/back.png' position={'fixed'} display='none'  opacity='0.3'></Image>
@@ -35,9 +36,13 @@ var  addinfo=useMemo(()=><Helperprint key={g[index]} test={g[index]}></Helperpri
   {/* <Text border={'1px'}w='max-content' pr='5px' pl='5px'>Sample Type  : {g[index]=="ESR"?"Whole Body":''}</Text> */}
     <SingleTest test={test[g[index]]} g={Object.keys(test[g[index]])}/>
   </Box>
+  
         {/* <Heading> {JSON.stringify(g[index])}</Heading> */}
         {addinfo}
         {/* {JSON.stringify(g[index])} */}
+        
+   
+        
         </>
     )
 }

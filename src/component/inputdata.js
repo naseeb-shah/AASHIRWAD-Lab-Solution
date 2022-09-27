@@ -101,6 +101,24 @@ if(sai.am==''){
     .then((x) => {
       
       dis(cleardata())
+      setstate(false)
+      setlft(false)
+      setlpt(false)
+      setrft(false)
+      setims(false)
+      sbs(false)
+      sdn(false)
+      sgt(false)
+      sgtu(false)
+      si(false)
+      sth(false)
+      smp(false)
+      sh(false)
+      ic(false)
+
+
+
+
       for(let i in per){
          per[i]=''
       }
@@ -120,12 +138,12 @@ if(sai.am==''){
 
  return(
  <>
- <Box opacity={cap} border='1px' borderColor='teal.800' ml='100px' p='10px' borderRadius={'15px'}>
+ <Box opacity={cap} border='1px' borderColor='teal.800' ml='100px' p='10px' borderRadius={'15px'} overflow='hidden' bg='whiteAlpha.400'>
  <Text fontStyle={'italic'} textColor='green' fontSize={'40px'}>
 Fill Patient Data
  </Text>
  <HStack flexWrap={'wrap'}>
-<HStack >
+<HStack  >
 <FormLabel w='105px'>
    Patient Name
 </FormLabel>
@@ -167,13 +185,15 @@ Time
 <Input type='time' name='time'value={per.time} backgroundColor={'green.100'} h='30px' onChange={Test} w='300px'>
 </Input>
 </HStack>
-<HStack ></HStack>
-   
+<HStack >
 <FormLabel w='100px'>
    Address
 </FormLabel>
 <Input value={per.address}  name='address'backgroundColor={'green.100'} h='30px' onChange={Test} w='300px'>
 </Input>
+</HStack>
+   
+
 </HStack>
 <HStack >
 <FormLabel w='100px'>
@@ -199,7 +219,7 @@ Amount
 </HStack>
  </Box>
  <Flex ml='100px' opacity={cap}
- flexWrap={'wrap'}> 
+ flexWrap={'wrap'} overflow='hidden'> 
 <VStack  > 
 <Button colorScheme='facebook'w='150px' onClick={()=>{HAEMATOLOGY?setstate(false):setstate(true)}}>
 HAEMATOLOGY
@@ -250,7 +270,7 @@ HHH
 ICT
 </Button>
 </VStack>
-<Box>
+<Box >
    
  <CircularProgress  value={60} color='blue.600' display={disp} position='fixed' size={'150px'} left='40%'  isIndeterminate>
   <CircularProgressLabel><Image ocapcity='.5'  w='113px'h='110px' src='/logo.jpg'mt='-54px'ml='17px' position={'absolute'} borderRadius={'50%'} ></Image></CircularProgressLabel>

@@ -113,7 +113,7 @@ const  dlete=(id)=>{
     if(true){
    return (
   <>
-  <HStack border={'2px'} mr='100px' ml='100px' p='10px' borderRadius={'20px'} overflow='scroll'>
+  <HStack  bg='blackAlpha.400'border={'2px'} mr='100px' ml='100px' p='10px' borderRadius={'20px'} overflow='scroll' textColor={'white'}>
     <Text>
       {e.name}
     </Text>

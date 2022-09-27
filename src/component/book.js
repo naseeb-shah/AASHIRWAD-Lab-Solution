@@ -125,12 +125,12 @@ return
 </Button>
 
 </Center>
-{isVisible?<Alert bg='blue' color={'white'} status='success' position={'fixed'}
+{isVisible?<Alert bg='blackAlpha.600 ' status='success' position={'fixed'}
 mt='-20%'
 w='400px'
 >
       <AlertIcon />
-      <Box>
+      <Box >
         <AlertTitle>Success!</AlertTitle>
         <AlertDescription>
           Your Request has been received

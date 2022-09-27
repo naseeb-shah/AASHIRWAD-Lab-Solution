@@ -114,7 +114,7 @@ export default function SingleTest({test,g}){
         {
             g.map((e)=>{
                 return(
-                    <><HStack maxWidth={'800px'} m='auto' pr='5px' pl='5px'>
+                    <><HStack maxWidth={'800px'} m='auto' pr='5px' pl='5px' >
                     <Text w='300px'>{e}</Text> <Text w='150px'>{Sai(test[e])}</Text>
                     <Text w='100px'>{val[e][1]}</Text>
                     <Text w='150'>{val[e][2]}</Text>

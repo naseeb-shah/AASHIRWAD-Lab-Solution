@@ -10,7 +10,7 @@ export default function Helperprint({test}){
 if(test=='ESR'){
     return (
         <>
-        <Box maxW={'800px'} m='auto' pt='20px'>
+        <Box maxW={'800px'} bg='whiteAlpha.600'    m='auto' pt='20px'>
 <Text border={'1px'} p='1.5px'w= 'max-content' fontStyle={'italic'}> Sample Type : Whole Blood</Text>
 <Text fontWeight={'500'}>
 COMMENTS :
@@ -48,7 +48,7 @@ Sickle cell anemia , spherocytosis , hypofibrinogenemia , or polycythemia vera .
 else if(test=='BIOCHEMISTRY'||test=='GLUCOSE TOLERANCE TEST ( GTT )'){
     return (
         <>
-        <Box maxW={'800px'} m='auto'  p='20px'>
+        <Box maxW={'800px'} bg='whiteAlpha.600'    m='auto'  p='20px'>
         <Text border={'1px'} pr='2px' pl='2px'w= 'max-content' 
         fontStyle={'italic'}> Primary Sample Type : Fluoride Plasma</Text>
             <Text fontWeight={500}>
@@ -68,7 +68,7 @@ else if(test=='BIOCHEMISTRY'||test=='GLUCOSE TOLERANCE TEST ( GTT )'){
 else if(test=='HAEMATOLOGY'){
     return (
         <>
-        <Box maxW={'800px'} m='auto'  p='20px'>
+        <Box maxW={'800px'} bg='whiteAlpha.600'    m='auto'  p='20px'>
         <Text border={'1px'} p='1.5px'w= 'max-content' fontStyle={'italic'}> Sample Type : Whole Blood</Text>
           
         <Text m='10px'>
@@ -83,7 +83,7 @@ else if(test=='HAEMATOLOGY'){
 else if(test=='IMMUNOLOGY-SEROLOGY'){
     return (
         <>
-        <Box maxW={'800px'} m='auto'  p='20px'>
+        <Box maxW={'800px'} bg='whiteAlpha.600'    m='auto'  p='20px'>
         <Text border={'1px'} p='1.5px'w= 'max-content' fontStyle={'italic'}> Sample Type : Whole Blood</Text>
             <Text fontWeight={500}>
             Note:-
@@ -111,7 +111,7 @@ the possibility of a resistant strain of malaria
 }else if(test=='WIDAL AGGLUTINATION TITRE(IMMUNOLOGY-SEROLOGY)'){
     return (
         <>
-        <Box maxW={'800px'} m='auto'  p='20px'>
+        <Box maxW={'800px'} bg='whiteAlpha.600'    m='auto'  p='20px'>
         <Text border={'1px'} p='1.5px'w= 'max-content' fontStyle={'italic'}>Primary Sample Type : Serum
 </Text>
           
@@ -135,7 +135,7 @@ SIGNIFICANT HOWEVER RISING TITRE ON SUBSEQUENT.</Text>
 }else if(test=='DENGUE  ANTIBODY  TEST'){
     return (
         <>
-        <Box maxW={'800px'} m='auto'  p='20px'>
+        <Box maxW={'800px'} bg='whiteAlpha.600'    m='auto'  p='20px'>
 
             <Box>
 <Text textDecoration={'underline'}>REMARKS :</Text>
@@ -180,7 +180,7 @@ characterized by high IgG Antibody levels and may be accompanied by elevated Igm
 }else if(test=='URINE ANALYSIS'){
     return (
         <>
-        <Box maxW={'800px'} m='auto'  p='20px'>
+        <Box maxW={'800px'} bg='whiteAlpha.600'    m='auto'  p='20px'>
         <Text border={'1px'} pr='2px' pl='2px'w= 'max-content' 
         fontStyle={'italic'}> Primary Sample Type : Urine</Text>
           
@@ -218,7 +218,7 @@ NOTE :-
 }else if(test=='IMMUNOLOGY'){
  return (
         <>
-        <Box maxW={'800px'} m='auto'  p='20px'>
+        <Box maxW={'800px'} bg='whiteAlpha.600'    m='auto'  p='20px'>
         <Text border={'1px'} p='1.5px'w= 'max-content' fontStyle={'italic'}>Primary Sample Type : Plain Serum
 </Text>
 <Box>
@@ -324,7 +324,7 @@ POSITIVE reaction.
 else if(test=='HAEMATOLOGY(ICT)'){
     return(
         <>
-         <Box maxW={'800px'} m='auto'  p='20px'>
+         <Box maxW={'800px'} bg='whiteAlpha.600'    m='auto'  p='20px'>
         <Text border={'1px'} p='1.5px'w= 'max-content' fontStyle={'italic'}>Primary Sample Type : Serum
 </Text>
           
@@ -341,7 +341,7 @@ else if(test=='HAEMATOLOGY(ICT)'){
 else if(test=='RENAL FUNCTION TEST'){
     return(
         <>
-         <Box maxW={'800px'} m='auto'  p='20px'>
+         <Box maxW={'800px'} bg='whiteAlpha.600'    m='auto'  p='20px'>
         <Text border={'1px'} p='1.5px'w= 'max-content' fontStyle={'italic'}>Primary Sample Type : Serum
 </Text>
 <Text ml='10px'>Note</Text>
