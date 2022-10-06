@@ -1,5 +1,4 @@
-import { Heading, Button,Flex, HStack, Text, Input, Box, Center,Image, Spacer } from "@chakra-ui/react"
-import { useEffect, useState } from "react"
+import { Box, Text } from "@chakra-ui/react"
 
 
 
@@ -360,6 +359,53 @@ else if(test=='RENAL FUNCTION TEST'){
         
         </>
     )
+}else if(test=='LIVER FUNCTION TEST'||test=='LIPID PROFILE TEST'){
+    return (
+        <>
+        <Box maxW={'800px'} bg='whiteAlpha.600'    m='auto'  p='20px'>
+        <Text border={'1px'} p='1.5px'w= 'max-content' fontStyle={'italic'}> Primary Sample Type : Serum
+</Text>
+<Text fontWeight={500}>
+            Note:-
+            <Text>* Test done on By Spectrum Kt+ Auto Biochemistry Analyser.
+</Text>
+            </Text>
+        <Text m='10px'>
+        **End of Reports**
+        </Text>
+
+        </Box>
+        </>
+    )
+
+}else if(test=='STOOL EXAMINATION REPORT'){
+    return (
+        <>
+        <Box maxW={'800px'} bg='whiteAlpha.600'    m='auto'  p='20px'>
+        {/* <Text border={'1px'} p='1.5px'w= 'max-content' fontStyle={'italic'}> Sample Type : Whole Blood</Text> */}
+          
+        <Text m='10px'>
+        **End of Reports**
+        </Text>
+
+        </Box>
+        </>
+    )
+
+}else if(test=='TYPHIDOT CARD TEST'){
+    return (
+        <>
+        <Box maxW={'800px'} bg='whiteAlpha.600'    m='auto'  p='20px'>
+        <Text border={'1px'} p='1.5px'w= 'max-content' fontStyle={'italic'}> Sample Type : Whole Blood</Text>
+          
+        <Text m='10px'>
+        **End of Reports**
+        </Text>
+
+        </Box>
+        </>
+    )
+
 }
 
 }

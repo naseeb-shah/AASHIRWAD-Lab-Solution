@@ -2,16 +2,12 @@
 
 
 
-import Allrepohelper from './allreporthelpres'
-import { useEffect, useState } from "react"
-import {CircularProgress,CircularProgressLabel,HStack,Image,Box ,
-   Flex,
-   Input,
-   Text, Center, Spacer ,Button} from '@chakra-ui/react'
-import { Outlet } from "react-router-dom"
-import { useDispatch, useSelector } from "react-redux"
+import { Box, Button, CircularProgress, CircularProgressLabel, Flex, HStack, Image, Input, Spacer, Text } from '@chakra-ui/react'
+import { useState } from "react"
+import { useDispatch } from "react-redux"
 import base from '../axios'
 import { getdata } from "../stats"
+import Allrepohelper from './allreporthelpres'
 export default function Main(){
    const dis=useDispatch()
    const [d,s]=useState('none')
@@ -120,7 +116,7 @@ if(val.techname){
 {/* <VStack> */}
 <HStack flexWrap={'wrap'} w='800px' m='auto' >
 <HStack flexWrap={'wrap'}  mt='50px' >
-<Box border={'1px'}  borderRadius='15px' fontSize={'30px'} fontWeight='400' bg={'facebook.100'} p='25px'fontStyle={'italic'}>
+<Box border={'1px'}  borderRadius='15px' fontSize={'30px'} fontWeight='400' bg={'blue.300'} p='25px'fontStyle={'italic'}h='300' overflowX={'auto'}>
 <Text  >Doctors</Text>
 {
    all.ref.length>0? all.ref.map((e,i)=><Box><Button onClick={()=>{
@@ -142,7 +138,7 @@ if(val.techname){
    <Text fontSize={'30px'}> Incentive Statas</Text>
    <Text fontSize={'30px'}> Dr. {current}</Text>
    
-   <CircularProgress ml='50px'  value={(currentdoc.length/all.allreports.length)*100} color='blue.600' size={'150px'}   >
+   <CircularProgress ml='50px'  value={((currentdoc.length/all.allreports.length)*100).toFixed(1)} color='blue.600' size={'150px'}   >
   <CircularProgressLabel>
   <Text  fontSize={'20px'} textColor={'blue.600'}>{((currentdoc.length/all.allreports.length)*100).toFixed(1)} %</Text>
 
@@ -166,7 +162,7 @@ if(val.techname){
    </Text>
    <Spacer></Spacer>
    <Text fontSize={'20px'} fontWeight='500'  color='green'>
-   {totelsale/100*15}
+   {(totelsale/100*15).toFixed(2)}
    </Text>
    </Flex>
   

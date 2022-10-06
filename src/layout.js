@@ -1,7 +1,7 @@
 import { ChevronDownIcon } from '@chakra-ui/icons';
 import {
-    Box, Button, Divider, Flex, HStack, Image, Menu,
-    MenuButton, MenuItem, MenuList, Text,Spacer, Center
+    Box, Button, Center, Divider, Flex, HStack, Image, Menu,
+    MenuButton, MenuItem, MenuList, Text
 } from '@chakra-ui/react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, Outlet } from 'react-router-dom';
@@ -24,14 +24,14 @@ if(authtype.addreport=='block')
 <Flex 
 id='navbar'
 color={'white'}
-backgroundColor={'blue.600'} alignItems={'center'} justifyContent='space-around' flexWrap={'wrap'} >
+backgroundColor={'blue.300'} alignItems={'center'} justifyContent='space-around' flexWrap={'wrap'} >
     <Box>
                    <Image h='45px'src='https://media1.giphy.com/media/LnW9Odhzh7ssfakcsz/giphy.gif?cid=ecf05e47j6b4nogyu7onxwkcfj21rf6ojxciwbu82kk74s6b&rid=giphy.gif&ct=s'></Image>
 
        
     </Box>
     <Box>
-<Text fontSize={'20px'} fontWeight='600' textColor={'yellow.400'}>
+<Text fontSize={'20px'} fontWeight='600' textColor={'white'}>
     <Link to='/'>AASHIRWAD LABORATORY</Link>
 
 </Text>
@@ -147,7 +147,7 @@ Reports
         
     <Outlet></Outlet>
     <Box id='footer'
-    bottom={'50%'}  fontWeight='500' mt='100px' backgroundColor={'blue.600'}>
+    bottom={'50%'}  fontWeight='500' mt='100px' backgroundColor={'blue.300'}>
        
             <Box lineHeight={'30px'} fontStyle='italic'>
             <Text  fontSize='30px' textColor={'red.600'}>

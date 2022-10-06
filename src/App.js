@@ -21,7 +21,7 @@ import Contact from './component/contactus/contact';
 import { useSelector } from 'react-redux';
 export default function App() {
   var authtype = useSelector((e) => e.auth.value)
-
+console.log(authtype)
 
   return (
 

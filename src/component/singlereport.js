@@ -1,4 +1,3 @@
-import { Heading, Button,Flex, HStack, Text, Input, Box, Center,Image, Spacer } from "@chakra-ui/react"
 
 import Test from "./test"
 

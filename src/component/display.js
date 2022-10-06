@@ -1,7 +1,7 @@
-import { Heading, Button, HStack, Text, Input, Box, Center } from "@chakra-ui/react"
+import { Box, Button, Center, HStack, Input, Text } from "@chakra-ui/react"
 import { useState } from "react"
-import { useDispatch,useSelector } from "react-redux"
-import {add} from '../features/handle'
+import { useDispatch, useSelector } from "react-redux"
+import { add } from '../features/handle'
 var test = {
     "HAEMATOLOGY": [
         ["HAEMOGLOBIN (HB)", "gm/dl", "11 – 16"],
@@ -171,7 +171,7 @@ export default function Repo({ x,y}) {
                 }
                 <>
                     <Center mb='30px'>
-                        <Button colorScheme='whatsapp' onClick={()=>dis(add(obj))} >Save </Button>
+                        <Button colorScheme='blue' onClick={()=>dis(add(obj))} >Save </Button>
                     </Center>
                 </>
             </Box>

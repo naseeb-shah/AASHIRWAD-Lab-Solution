@@ -1,11 +1,6 @@
-import { Box, Button, Center, CircularProgress, CircularProgressLabel, HStack, Image, Input, Spacer, Text } from '@chakra-ui/react';
+import { Button, HStack, Spacer, Text } from '@chakra-ui/react';
 
-import {
-    Alert, AlertDescription, AlertIcon,
-    AlertTitle,
-    CloseButton, Textarea, useDisclosure,Heading
-} from "@chakra-ui/react";
-import axios from 'axios';
+import { useDisclosure } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 
 import base from '../axios';
@@ -113,7 +108,7 @@ const  dlete=(id)=>{
     if(true){
    return (
   <>
-  <HStack  bg='blackAlpha.400'border={'2px'} mr='100px' ml='100px' p='10px' borderRadius={'20px'} overflow='scroll' textColor={'white'}>
+  <HStack  bg='blue.300'border={'2px'} mr='100px' ml='100px' p='10px' borderRadius={'20px'} overflow='auto' textColor={'white'}>
     <Text>
       {e.name}
     </Text>

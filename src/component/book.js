@@ -75,10 +75,10 @@ return
     return (
         <>
 <Center>
-    <Box  textColor={'white'} p='30px' w='max-content' border={'1px'} mt='50px' borderRadius={'15px'}  backgroundColor='blue.600'nack
+    <Box  textColor={'white'} p='30px' w='max-content' border={'1px'} mt='50px' borderRadius={'15px'}  backgroundColor='blue.400'nack
     
    
-    backgroundColor='blackAlpha.400'
+    // backgroundColor='blackAlpha.400'
     // backgroundSize='cover'
     
     >
@@ -125,7 +125,7 @@ return
 </Button>
 
 </Center>
-{isVisible?<Alert bg='blackAlpha.600 ' status='success' position={'fixed'}
+{isVisible?<Alert bg='blue.600 ' status='success' position={'fixed'}
 mt='-20%'
 w='400px'
 >

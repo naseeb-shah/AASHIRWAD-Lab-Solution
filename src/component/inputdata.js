@@ -139,7 +139,7 @@ if(sai.am==''){
  return(
  <>
  <Box opacity={cap} border='1px' borderColor='teal.800' ml='100px' p='10px' borderRadius={'15px'} overflow='hidden' bg='whiteAlpha.400'>
- <Text fontStyle={'italic'} textColor='green' fontSize={'40px'}>
+ <Text fontStyle={'italic'} textColor='blue.600' fontSize={'40px'}>
 Fill Patient Data
  </Text>
  <HStack flexWrap={'wrap'}>
@@ -221,52 +221,52 @@ Amount
  <Flex ml='100px' opacity={cap}
  flexWrap={'wrap'} overflow='hidden'> 
 <VStack  > 
-<Button colorScheme='facebook'w='150px' onClick={()=>{HAEMATOLOGY?setstate(false):setstate(true)}}>
+<Button colorScheme='blue'w='150px' onClick={()=>{HAEMATOLOGY?setstate(false):setstate(true)}}>
 HAEMATOLOGY
 </Button>
-<Button colorScheme='facebook' w='150px' onClick={()=>{ESR?setesr(false):setesr(true)}}>
+<Button colorScheme='blue' w='150px' onClick={()=>{ESR?setesr(false):setesr(true)}}>
 ESR
 </Button>
-<Button colorScheme='facebook' w='150px' onClick={()=>{LFT?setlft(false):setlft(true)}}>
+<Button colorScheme='blue' w='150px' onClick={()=>{LFT?setlft(false):setlft(true)}}>
 LFT
 </Button>
-<Button  colorScheme='facebook' w='150px'onClick={()=>{LPT?setlpt(false):setlpt(true)}}>
+<Button  colorScheme='blue' w='150px'onClick={()=>{LPT?setlpt(false):setlpt(true)}}>
 LPT
 </Button>
-<Button  colorScheme='facebook' w='150px'onClick={()=>{IMS?setims(false):setims(true)}}>
+<Button  colorScheme='blue' w='150px'onClick={()=>{IMS?setims(false):setims(true)}}>
 IMM SERO
 </Button>
-<Button  colorScheme='facebook' w='150px'onClick={()=>{mp?setims(false):smp(true)}}>
+<Button  colorScheme='blue' w='150px'onClick={()=>{mp?setims(false):smp(true)}}>
 IMM(MP)
 </Button>
-<Button  colorScheme='facebook' w='150px'onClick={()=>{RFT?setrft(false):setrft(true)}}>
+<Button  colorScheme='blue' w='150px'onClick={()=>{RFT?setrft(false):setrft(true)}}>
    RFT
 </Button>
-<Button  colorScheme='facebook' w='150px'onClick={()=>{BS?sbs(false):sbs(true)}}>
+<Button  colorScheme='blue' w='150px'onClick={()=>{BS?sbs(false):sbs(true)}}>
 BIOCHEMISTRY
 </Button>
-<Button  colorScheme='facebook' w='150px'onClick={()=>{DN?sdn(false):sdn(true)}}>
+<Button  colorScheme='blue' w='150px'onClick={()=>{DN?sdn(false):sdn(true)}}>
 DENGUE  ANTIBODY
 </Button>
-<Button  colorScheme='facebook' w='150px'onClick={()=>{GT?sgt(false):sgt(true)}}>
+<Button  colorScheme='blue' w='150px'onClick={()=>{GT?sgt(false):sgt(true)}}>
 GTT
 </Button>
-<Button  colorScheme='facebook' w='150px'onClick={()=>{GTU?sgtu(false):sgtu(true)}}>
+<Button  colorScheme='blue' w='150px'onClick={()=>{GTU?sgtu(false):sgtu(true)}}>
 GTT (URINE)
 </Button>
-<Button  colorScheme='facebook' w='150px'onClick={()=>{I?si(false):si(true)}}>
+<Button  colorScheme='blue' w='150px'onClick={()=>{I?si(false):si(true)}}>
 IMMUNOLOGY
 </Button>
-<Button  colorScheme='facebook' w='150px'onClick={()=>{S?ss(false):ss(true)}}>
+<Button  colorScheme='blue' w='150px'onClick={()=>{S?ss(false):ss(true)}}>
 STOOL EXAM
 </Button>
-<Button  colorScheme='facebook' w='150px'onClick={()=>{TH?sth(false):sth(true)}}>
+<Button  colorScheme='blue' w='150px'onClick={()=>{TH?sth(false):sth(true)}}>
 TYPHIDOT
 </Button>
-<Button  colorScheme='facebook' w='150px'onClick={()=>{hh?sh(false):sh(true)}}>
+<Button  colorScheme='blue' w='150px'onClick={()=>{hh?sh(false):sh(true)}}>
 HHH
 </Button>
-<Button  colorScheme='facebook' w='150px'onClick={()=>{ict?ic(false):ic(true)}}>
+<Button  colorScheme='blue' w='150px'onClick={()=>{ict?ic(false):ic(true)}}>
 ICT
 </Button>
 </VStack>
@@ -294,7 +294,7 @@ ICT
  {hh?< Repo   y={13}x={"IMMUNOLOGY-SEROLOGY(HHH)"}/>:""}
  {ict?< Repo   y={15}x={"HAEMATOLOGY(ICT)"}/>:""}
  <Center>
- <Button colorScheme={'facebook'}
+ <Button colorScheme={'blue'}
  onClick={sendata}> Report done</Button>
  </Center>
 </Box>

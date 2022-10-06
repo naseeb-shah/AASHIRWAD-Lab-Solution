@@ -1,4 +1,4 @@
-import { Heading, Button, HStack, Text, Input, Box, Center,Image } from "@chakra-ui/react"
+import { Box, Text } from "@chakra-ui/react"
 
 
 

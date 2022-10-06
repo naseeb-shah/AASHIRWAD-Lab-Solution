@@ -1,5 +1,5 @@
 
-import { Box, Center ,HStack,Text, VStack,Image,Link} from "@chakra-ui/react"
+import { Box, Center, HStack, Image, Link, Text, VStack } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 import './contact.css';
 
@@ -8,14 +8,14 @@ export default function Contact(){
 var redirect=useNavigate()
     return(<>
 <Box >
-<Center pt='100px' textColor={'white'}>
-    <Text fontSize={'45px'} w='-moz-max-content' bg='blackAlpha.500'p='15px' borderRadius={'10px'}>
+<Center pt='100px' textColor={'white'} >
+    <Text fontSize={'45px'} w='-moz-max-content' bg='blue.400'p='15px' borderRadius={'10px'}>
     CONTACT US
     </Text>
 </Center>
 <Center>
-<Box>
-<Text maxW={'450px'} bg='blackAlpha.500'p='20px' color={'white'} borderRadius='25px'>
+<Box bg='blue.400'>
+<Text maxW={'450px'} p='20px' color={'white'} borderRadius='25px'>
 If you have any questions or queries a member of staff will always be happy to help. Feel free to contact us by telephone or email and we will be sure to get back to you as soon as possible.
 <Text>
     Call +918708730331

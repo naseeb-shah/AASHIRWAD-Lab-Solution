@@ -17,7 +17,7 @@ deensahh('/book')
 
   
     <Box pt='80px' >
-    <Heading  textShadow={'revert'} fontStyle={'italic'} textAlign='center' mb='50px' color={'blue'}>
+    <Heading  textShadow={'revert'} fontStyle={'italic'} textAlign='center' mb='50px' color={'blue.300'}>
         Welcome to Aashirwad Labs
     </Heading>
     <Image   src='/sai.jpg' m='auto'boxShadow={'outline'}>
@@ -26,7 +26,7 @@ deensahh('/book')
 </Box>
     <Box ml='10%' mt='30px'  >
         
-<Heading fontSize={'30px'} textColor='yellowgreen' fontStyle={'italic'}>Top Booked Medical Tests
+<Heading fontSize={'30px'} textColor='blue.500' fontStyle={'italic'}>Top Booked Medical Tests
 </Heading>
 <Flex flexWrap={'wrap'} mt='30px'>
 <Box  border={'2px'} w='330px' p='10px' borderRadius={'15px'} borderColor='teal'>
@@ -83,7 +83,7 @@ Also known as   Albumin Test
 </Text>
 </Box>
 <Center mt='10px'>
-<Button colorScheme={'teal'} onClick={gobook}>
+<Button colorScheme={'blue'} onClick={gobook}>
     Book Now
 </Button>
 </Center>
@@ -143,7 +143,7 @@ Also known as  Creatinine Conventional Blood
 </Text>
 </Box>
 <Center mt='10px'>
-<Button  colorScheme={'teal'} onClick={gobook}>
+<Button  colorScheme={'blue'} onClick={gobook}>
     Book Now
 </Button>
 </Center>
@@ -203,7 +203,7 @@ Also known as Triglycerides Blood Test
 </Text>
 </Box>
 <Center mt='10px'>
-<Button  colorScheme={'teal'} onClick={gobook}>
+<Button  colorScheme={'blue'} onClick={gobook}>
     Book Now
 </Button>
 </Center>

@@ -1,7 +1,6 @@
-import { Button, HStack, Input, Text } from "@chakra-ui/react"
-import { useState } from "react"
+import { Button, HStack, Text } from "@chakra-ui/react";
 
-import base from '../axios'
+import base from '../axios';
 
 export default  function Allrepohelper({element,fun}){
 
@@ -27,7 +26,7 @@ const pay=(id)=>{
 return(
     <>
     {/* {JSON.stringify(element)} */}
-    <HStack backgroundColor={'facebook.500'} color='white'p='5px' borderBottom={'2px'} >
+    <HStack backgroundColor={'blue.300'} color='white'p='5px' borderBottom={'2px'} >
 
         <Text w='100px' borderLeft={'2px'}p='5px' paddingLeft={'4px'}>
             {element.name}

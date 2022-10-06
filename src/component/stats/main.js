@@ -1,10 +1,6 @@
 
+import { Box, Button, CircularProgress, CircularProgressLabel, Flex, HStack, Image, Input, Spacer, Text } from '@chakra-ui/react'
 import { useEffect, useState } from "react"
-import {CircularProgress,CircularProgressLabel,HStack,Image,Box ,
-   Flex,
-   Input,
-   Text, Center, Spacer ,Button} from '@chakra-ui/react'
-import { Outlet } from "react-router-dom"
 import { useDispatch, useSelector } from "react-redux"
 import base from '../axios'
 import { getdata } from "../stats"
@@ -267,19 +263,19 @@ if(val.techname){
 </Box>
 </HStack>
 <HStack flexWrap={'wrap'} justifyContent='space-around' mt='50px' >
-<Box fontSize={'30px'} fontWeight='500'>
-<Text  >Connceted Docter</Text>
+<Box fontSize={'30px'} fontWeight='500' color={'blue.600'}>
+<Text  >Doctor</Text>
 {
    all.ref.length>0? all.ref.map((e,i)=><Text>{i+1} Dr. {e}</Text>):''
 }
 </Box>
-<Box fontSize={'30px'} fontWeight='500' >
+<Box fontSize={'30px'} fontWeight='500' color={'blue.600'} >
 <Text>Total Technician</Text>
 {
    all.tech.length>0? all.tech.map((e,i)=><Text>{i+1} Dr. {e}</Text>):''
 }
 </Box>
-<Box fontSize={'30px'} fontWeight='500'>
+<Box fontSize={'30px'} fontWeight='500' color={'blue.600'}>
 <Text  >Total Number Report</Text>
 {all.noreports}
 </Box>

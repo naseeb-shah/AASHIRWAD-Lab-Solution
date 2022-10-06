@@ -22,7 +22,7 @@ return(
 <HStack mt='50px' w='600px'>
 <Text fontSize={'25px'}w='150px' fontWeight={500}>Search Report</Text>
     <Input onChange={(e)=>sname(e.target.value)} value={name} bg='white' borderColor={'black'} border={'1px'}></Input>
-<Button colorScheme={'facebook'} onClick={()=>{
+<Button colorScheme={'blue'} onClick={()=>{
     var result=all.data.filter(e=>e.name==name)
     result.length>0?rep({data:result}):alert("Not Found !")
 

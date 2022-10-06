@@ -1,11 +1,8 @@
-import { Heading,CircularProgress, Button, HStack, Text, Input, Box, Center,Image } from "@chakra-ui/react"
-import axios from "axios"
-import { CircularProgressLabel } from '@chakra-ui/react'
+import { Box, Button, CircularProgress, CircularProgressLabel, HStack, Image, Input, Text } from "@chakra-ui/react"
 
 import { useState } from "react"
-import List from "./showlistofreports"
-import ReactToPrint from 'react-to-print';
 import sai from './axios'
+import List from "./showlistofreports"
 
 
 export default function(){
@@ -32,7 +29,7 @@ export default function(){
     
     <HStack flexWrap={'wrap'} pt='50px'ml='80px'   >
         {/* <Image h='150px'src='https://media1.giphy.com/media/St3NH8X8DMq52JyMOF/giphy.gif?cid=ecf05e47wopg20i7hy9afhl30z5jbjro8w1eeewl9lqlvtw0&rid=giphy.gif&ct=s'></Image> */}
-<Box  backgroundColor='blackAlpha.400' p='15px' borderRadius='10px' color={'white'}>
+<Box  backgroundColor='blue.300' p='15px' borderRadius='10px' color={'white'}>
     <Text fontSize={'25px'}  fontStyle='italic'>
         Download Report
     </Text>
@@ -46,7 +43,7 @@ export default function(){
   sal("block") 
     }}>
 </Input>
-<Text textColor={'red.300'} display={al}> Please Enter Valid Mobile Number</Text>
+<Text textColor={'red.200'} display={al}> Please Enter Valid Mobile Number</Text>
 <Button  variant={'outline'} onClick={getreport}>
     Get Report
 </Button>

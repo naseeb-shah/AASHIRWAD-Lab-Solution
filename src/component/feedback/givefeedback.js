@@ -1,9 +1,9 @@
 import { Box, Button, Center, CircularProgress, CircularProgressLabel, Image, Input, Text } from '@chakra-ui/react';
 
 import {
-    Alert, AlertDescription, AlertIcon,
-    AlertTitle,
-    CloseButton, Textarea, useDisclosure
+  Alert, AlertDescription, AlertIcon,
+  AlertTitle,
+  CloseButton, Textarea, useDisclosure
 } from "@chakra-ui/react";
 import { useState } from "react";
 
