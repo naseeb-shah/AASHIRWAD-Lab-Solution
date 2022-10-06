@@ -68,12 +68,11 @@ export default function Report(){
                 </HStack>
                 </Box>
                 <Spacer></Spacer>
-                <QRCode  value={`${window.location.href}`} 
+                <a href={`${window.location.href}`}>  <QRCode  value={`${window.location.href}`} 
                   size={50}
-                //   style={{ height: "auto", maxWidth: "100%", width: "100%" }}
-                  
-                //   viewBox={`0 0 100 100`}
-                />
+              
+                /></a>
+              
     <Text>M:+91-87087-33011</Text>
                 </HStack>
                 </Box>
